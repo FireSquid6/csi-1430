@@ -18,8 +18,9 @@ OUTPUT=$(diff --color -u output.txt expected-output.txt)
 
 # if output is empty, then the files are the same
 if [ -z "$OUTPUT" ]; then
-  echo "Test passed"
+  echo " Test passed!"
 else 
-  echo "Test failed:"
-  echo "$OUTPUT"
+  echo " Test failed:"
+  # running the command twice is the only way to get the colors to show up
+  diff --color -u output.txt expected-output.txt
 fi

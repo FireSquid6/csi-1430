@@ -24,8 +24,6 @@ fi
 
 mkdir -p "$DIRECTORY"
 
-# copy all files from the template directory
-cp -r ./template/. "$DIRECTORY"
 touch "$DIRECTORY/main.cpp"
 touch "$DIRECTORY/expected-output.txt"
 

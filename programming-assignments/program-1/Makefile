@@ -5,4 +5,4 @@ run:
 test:
 	g++ main.cpp -o program.o
 	./program.o > output.txt
-	diff output.txt expected-output.txt
+	diff --color -u output.txt expected-output.txt

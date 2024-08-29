@@ -17,6 +17,10 @@
         llvmPackages_17.libcxxClang
         ccls
       ];
+      shellHook = ''
+          export PATH="$PATH:./scripts"
+
+      '';
     };
   };
 }

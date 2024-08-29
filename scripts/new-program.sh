@@ -26,3 +26,27 @@ mkdir -p "$DIRECTORY"
 
 # copy all files from the template directory
 cp -r ./template/. "$DIRECTORY"
+touch "$DIRECTORY/main.cpp"
+touch "$DIRECTORY/expected-output.txt"
+
+echo "/*
+ * Author: Jonathan Deiss
+ * Assignment Title:
+ * Assignment Description:
+ * Due Date:
+ * Date Created:
+ * Date Last Modified:
+ */
+#include <iostream>
+
+using namespace std;
+int main() {
+  // Data Abstraction
+  // Input
+  // Process
+  // Output
+
+  return 0;
+}" > "$DIRECTORY/main.cpp"
+
+echo "" > "$DIRECTORY/expected-output.txt"

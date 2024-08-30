@@ -39,10 +39,15 @@ echo "/*
 
 using namespace std;
 int main() {
-  // Data Abstraction
-  // Input
-  // Process
-  // Output
+  // Data Abstraction:
+    
+  // Input:
+    
+  // Process:
+    
+  // Output:
+    
+  // Assumptions:
 
   return 0;
 }" > "$DIRECTORY/main.cpp"

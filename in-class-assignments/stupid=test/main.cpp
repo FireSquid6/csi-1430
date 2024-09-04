@@ -7,21 +7,17 @@
  * Date Last Modified:
  */
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 int main() {
-  // Data Abstraction:
-  unsigned long x = 100;
-    
-  // Input:
-  x = -20;
-    
-  // Process:
-    
-  // Output:
-  cout << x << endl;
-    
-  // Assumptions:
+  string stuff = "Hello!";
+
+
+  cout << fixed << setw(10);
+  cout << stuff << endl;
+  cout << stuff << endl;
+  cout << stuff << endl;
 
   return 0;
 }

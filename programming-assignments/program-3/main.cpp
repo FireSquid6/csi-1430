@@ -1,10 +1,10 @@
 /*
- * Author: Jonathan Deiss
- * Assignment Title: Approximate Pi
- * Assignment Description: Approximates PI using a formula
- * Due Date: 09/04/2024
- * Date Created: 09/04/2024 
- * Date Last Modified: 09/04/2024
+* Author: Jonathan Deiss
+* Assignment Title: Appriximate Pi
+* Assignment Description: Approximates PI
+* Due Date: 9/4/2024
+* Date Created: 9/4/2024
+* Date Last Modified: 9/4/2024
  */
 #include <iostream>
 #include <iomanip>

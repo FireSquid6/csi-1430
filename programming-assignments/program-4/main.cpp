@@ -5,8 +5,7 @@
  * Due Date: 9/6/2024
  * Date Created: 9/6/2024
  * Date Last Modified: 9/6/2024
-
- */
+*/
 #include <iostream>
 
 using namespace std;

@@ -25,7 +25,7 @@ int main() {
   }
     
   // Output:
-  cout << endl << "The sum of the digits is " << digitSum << "." << endl;
+  cout << endl << "The sum of the digits is " << digitSum << ".";
     
   // Assumptions:
   // - input is valid

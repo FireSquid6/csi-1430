@@ -127,7 +127,7 @@ int main() {
   cout << endl;
   cout << "Arithmetic Mean    = " << arithmetic << endl;
   cout << "Geometric Mean     = " << geometric << endl;
-  cout << "Hardmonic Mean     = " << harmonic << endl;
+  cout << "Harmonic Mean     = " << harmonic << endl;
   cout << "Standard Deviation = " << standard << endl;
 
   // Assumptions:

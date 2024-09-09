@@ -52,6 +52,7 @@ double standardDeviation(vector<int> nums) {
   double mean = arithmeticMean(nums);
   double total = 0;
 
+  // you don't need to sort to find the standard deviation
   for (int i = 0; i < nums.size(); i++) {
     total += pow(nums[i] - mean, 2);
   }

@@ -45,7 +45,12 @@ int main() {
   // Output:
   cout << fixed << setprecision(2);
   if (realSolutions) {
-    cout << x2 << " " << x1 << "  ";
+    if (x1 == x2) {
+      cout << x1 << "  ";
+
+    } else {
+      cout << x2 << " " << x1 << "  ";
+    }
   } else {
     cout << "NO REAL ROOTS  ";
   }

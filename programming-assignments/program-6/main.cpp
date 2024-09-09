@@ -43,9 +43,9 @@ int main() {
     
   // Output:
   if (realSolutions) {
-    cout << x1 << " " << x2;
+    cout << x1 << " " << x2 << "  ";
   } else {
-    cout << "NO REAL SOLUTIONS";
+    cout << "NO REAL ROOTS  ";
   }
 
   cout << "(" << vertexX << ", " << vertexY << ")" << endl;

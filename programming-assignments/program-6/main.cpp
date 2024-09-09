@@ -1,10 +1,10 @@
 /*
  * Author: Jonathan Deiss
- * Assignment Title:
- * Assignment Description:
- * Due Date:
- * Date Created:
- * Date Last Modified:
+ * Assignment Title: Quadratic Formula
+ * Assignment Description: Calculates the quardracit formula
+ * Due Date: 09/09/2024
+ * Date Created: 09/09/2024
+ * Date Last Modified: 09/09/2024
  */
 #include <iostream>
 #include <cmath>
@@ -43,12 +43,12 @@ int main() {
     
   // Output:
   if (realSolutions) {
-    cout << "ZEROS: " << x1 << ", " << x2 << endl;
+    cout << x1 << " " << x2;
   } else {
-    cout << "NO REAL SOLUTIONS" << endl;
+    cout << "NO REAL SOLUTIONS";
   }
 
-  cout << "VERTEX: (" << vertexX << ", " << vertexY << ")" << endl;
+  cout << "(" << vertexX << ", " << vertexY << ")" << endl;
     
   // Assumptions:
 

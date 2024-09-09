@@ -6,68 +6,72 @@
  * Date Created:
  * Date Last Modified:
  */
+#include <cmath>
 #include <iostream>
-#include <iomanip>
+#include <vector> // I am NOT about to do 25 if statements
 
 using namespace std;
+
+int sumVector(vector<int> nums) {
+  int total = 0;
+  for (int i = 0; i < nums.size(); i++) {
+    total += nums[i];
+  }
+  return total;
+}
+
+int productVector(vector<int> nums) {
+  int total = 0;
+
+  for (int i = 0; i < nums.size(); i++) {
+    total *= nums[i];
+  }
+
+  return total;
+}
+
+double arithmeticMean(vector<int> nums) {
+  int sum = sumVector(nums);
+
+  return 1.0 * sum / nums.size();
+}
+
+double geometricMean(vector<int> nums) {
+  int product = productVector(nums);
+
+  return pow(static_cast<double>(product), 1.0 / nums.size());
+}
+
 int main() {
   // Data Abstraction:
-  double scores[5];
+  vector<int> nums;
+  double arithmetic;
+  double geometric;
 
-  double average;
-  char letterGrade;
-  double minimum = 999999.0;  // really high number
-  double maximium = -1.0; // shouldn't be possible
-    
   // Input:
-  cout << "Please Enter Five Test Scores." << endl; 
-
   for (int i = 0; i < 5; i++) {
-    cin >> scores[i];
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    nums.push_back(num);
   }
-    
 
   // Process:
-  for (int i = 0; i < 5; i++) {
-    if (scores[i] < minimum) {
-      minimum = scores[i];
-    }
-    if (scores[i] > maximium) {
-      maximium = scores[i];
-    }
-    average += scores[i];
-  }
-  average /= 5;
+  arithmetic = arithmeticMean(nums);
+  geometric = geometricMean(nums);
 
-  switch (int(average) / 10) {
-    case 10:
-    case 9:
-      letterGrade = 'A';
-      break;
-    case 8:
-      letterGrade = 'B';
-      break;
-    case 7:
-      letterGrade = 'C';
-      break;
-    case 6:
-      letterGrade = 'D';
-      break;
-    default:
-      letterGrade = 'F';
-      break;
-  }
-    
   // Output:
-  cout << fixed << setprecision(2) << endl;
-  cout << "Average = " << average << endl;
-  cout << "Grade   = " << letterGrade << endl;
-  cout << "Minimum = " << minimum << endl;
-  cout << "Maximum = " << maximium << endl;
+  cout << "Result:" << endl;
+  cout << "Data:" << endl;
 
-    
+  for (int i = 0; i < nums.size(); i++) {
+    cout << nums[i] << endl;
+  }
+
+  cout << "Arithmetic Mean   = " << arithmetic << endl;
+  cout << "Geometric Mean    = " << geometric << endl;
+
   // Assumptions:
-  // - nothing in scores is negative or greater than 100.0
 
   return 0;
 }

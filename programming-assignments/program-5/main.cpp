@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <iostream>
 #include <vector> 
+#include <algorithm>
 
 using namespace std;
 
@@ -108,6 +109,7 @@ int main() {
   }
 
   // Process:
+  sort(nums.begin(), nums.end());
   arithmetic = arithmeticMean(nums);
   geometric = geometricMean(nums);
   harmonic = harmonicMean(nums);
@@ -117,7 +119,7 @@ int main() {
   cout << endl << endl << endl << "Result:" << endl << endl;
   cout << "Data:" << endl;
 
-  for (unsigned int i = 0; i < nums.size(); i++) {
+  for (int i = nums.size() - 1; i >= 0; i--) {
     cout << nums[i] << endl;
   }
 

@@ -7,8 +7,9 @@
  * Date Last Modified:
  */
 #include <cmath>
+#include <iomanip>
 #include <iostream>
-#include <vector> // I am NOT about to do 25 if statements
+#include <vector> 
 
 using namespace std;
 
@@ -66,15 +67,13 @@ int main() {
   double harmonic;
   double standard;
 
-  nums.assign({43, 85, 95, 100, 78});
-
-  cout << "Enter five numbers: " << endl;
   // Input:
-  // for (int i = 0; i < 5; i++) {
-  //   int num;
-  //   cin >> num;
-  //   nums.push_back(num);
-  // }
+  cout << "Enter five numbers: " << endl;
+  for (int i = 0; i < 5; i++) {
+    int num;
+    cin >> num;
+    nums.push_back(num);
+  }
 
   // Process:
   arithmetic = arithmeticMean(nums);
@@ -90,6 +89,7 @@ int main() {
     cout << nums[i] << endl;
   }
 
+  cout << fixed << setprecision(2);
   cout << "Arithmetic Mean    = " << arithmetic << endl;
   cout << "Geometric Mean     = " << geometric << endl;
   cout << "Hardmonic Mean     = " << harmonic << endl;

@@ -114,7 +114,7 @@ int main() {
   standard = standardDeviation(nums);
 
   // Output:
-  cout << endl << endl << endl << endl << "Result:" << endl << endl;
+  cout << endl << endl << endl << "Result:" << endl << endl;
   cout << "Data:" << endl;
 
   for (unsigned int i = 0; i < nums.size(); i++) {

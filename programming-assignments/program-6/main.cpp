@@ -7,6 +7,7 @@
  * Date Last Modified: 09/09/2024
  */
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 
 using namespace std;
@@ -42,6 +43,7 @@ int main() {
   vertexY = c - (b * b) / (4 * a);
     
   // Output:
+  cout << fixed << setprecision(2);
   if (realSolutions) {
     cout << x1 << " " << x2 << "  ";
   } else {

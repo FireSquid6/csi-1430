@@ -114,7 +114,7 @@ int main() {
   standard = standardDeviation(nums);
 
   // Output:
-  cout << "Result:" << endl;
+  cout << endl << endl << endl << endl << "Result:" << endl << endl;
   cout << "Data:" << endl;
 
   for (unsigned int i = 0; i < nums.size(); i++) {
@@ -122,6 +122,7 @@ int main() {
   }
 
   cout << fixed << setprecision(2);
+  cout << endl;
   cout << "Arithmetic Mean    = " << arithmetic << endl;
   cout << "Geometric Mean     = " << geometric << endl;
   cout << "Hardmonic Mean     = " << harmonic << endl;

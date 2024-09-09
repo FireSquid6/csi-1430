@@ -20,16 +20,6 @@ int sumVector(vector<int> nums) {
   return total;
 }
 
-int productVector(vector<int> nums) {
-  int total = 0;
-
-  for (int i = 0; i < nums.size(); i++) {
-    total *= nums[i];
-  }
-
-  return total;
-}
-
 double arithmeticMean(vector<int> nums) {
   int sum = sumVector(nums);
 
@@ -37,9 +27,35 @@ double arithmeticMean(vector<int> nums) {
 }
 
 double geometricMean(vector<int> nums) {
-  int product = productVector(nums);
+  double total = 1;
 
-  return pow(static_cast<double>(product), 1.0 / nums.size());
+  for (int i = 0; i < nums.size(); i++) {
+    total *= pow(nums[i], 1.0 / nums.size());
+  }
+
+  return total;
+}
+
+double harmonicMean(vector<int> nums) {
+  double total = 0;
+
+  for (int i = 0; i < nums.size(); i++) {
+    total += 1.0 / nums[i];
+  }
+
+
+  return nums.size() / total;
+}
+
+double standardDeviation(vector<int> nums) {
+  double mean = arithmeticMean(nums);
+  double total = 0;
+
+  for (int i = 0; i < nums.size(); i++) {
+    total += pow(nums[i] - mean, 2);
+  }
+
+  return sqrt(total / nums.size());
 }
 
 int main() {
@@ -47,18 +63,24 @@ int main() {
   vector<int> nums;
   double arithmetic;
   double geometric;
+  double harmonic;
+  double standard;
 
+  nums.assign({43, 85, 95, 100, 78});
+
+  cout << "Enter five numbers: " << endl;
   // Input:
-  for (int i = 0; i < 5; i++) {
-    int num;
-    cout << "Enter a number: ";
-    cin >> num;
-    nums.push_back(num);
-  }
+  // for (int i = 0; i < 5; i++) {
+  //   int num;
+  //   cin >> num;
+  //   nums.push_back(num);
+  // }
 
   // Process:
   arithmetic = arithmeticMean(nums);
   geometric = geometricMean(nums);
+  harmonic = harmonicMean(nums);
+  standard = standardDeviation(nums);
 
   // Output:
   cout << "Result:" << endl;
@@ -68,8 +90,10 @@ int main() {
     cout << nums[i] << endl;
   }
 
-  cout << "Arithmetic Mean   = " << arithmetic << endl;
-  cout << "Geometric Mean    = " << geometric << endl;
+  cout << "Arithmetic Mean    = " << arithmetic << endl;
+  cout << "Geometric Mean     = " << geometric << endl;
+  cout << "Hardmonic Mean     = " << harmonic << endl;
+  cout << "Standard Deviation = " << standard << endl;
 
   // Assumptions:
 

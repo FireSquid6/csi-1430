@@ -1,10 +1,10 @@
 /*
  * Author: Jonathan Deiss
- * Assignment Title:
- * Assignment Description:
- * Due Date:
- * Date Created:
- * Date Last Modified:
+ * Assignment Title: Statistics Formulas
+ * Assignment Description: Performs some statistics on 5 numbers
+ * Due Date: 09/09/2024
+ * Date Created: 09/09/2024
+ * Date Last Modified: 09/09/2024
  */
 #include <cmath>
 #include <iomanip>
@@ -13,34 +13,58 @@
 
 using namespace std;
 
+//************************************************************
+// description: sums all values in a vector
+// return: sum of all values
+// pre: none
+// post: none
+//************************************************************
 int sumVector(vector<int> nums) {
   int total = 0;
-  for (int i = 0; i < nums.size(); i++) {
+  for (unsigned int i = 0; i < nums.size(); i++) {
     total += nums[i];
   }
   return total;
 }
 
+//************************************************************
+// description: finds the arithmetic mean of a vector
+// return: the arithmetic mean
+// pre: none
+// post: none
+//************************************************************
 double arithmeticMean(vector<int> nums) {
   int sum = sumVector(nums);
 
   return 1.0 * sum / nums.size();
 }
 
+//************************************************************
+// description: finds the geometric mean of a vector
+// return: the geometric mean
+// pre: none
+// post: none
+//************************************************************
 double geometricMean(vector<int> nums) {
   double total = 1;
 
-  for (int i = 0; i < nums.size(); i++) {
+  for (unsigned int i = 0; i < nums.size(); i++) {
     total *= pow(nums[i], 1.0 / nums.size());
   }
 
   return total;
 }
 
+//************************************************************
+// description: finds the harmonic mean of a vector
+// return: the harmonic mean
+// pre: none
+// post: none
+//************************************************************
 double harmonicMean(vector<int> nums) {
   double total = 0;
 
-  for (int i = 0; i < nums.size(); i++) {
+  for (unsigned int i = 0; i < nums.size(); i++) {
     total += 1.0 / nums[i];
   }
 
@@ -48,12 +72,18 @@ double harmonicMean(vector<int> nums) {
   return nums.size() / total;
 }
 
+//************************************************************
+// description: finds the standard deviation of a vector
+// return: the standard deviation
+// pre: none 
+// post: none
+//************************************************************
 double standardDeviation(vector<int> nums) {
   double mean = arithmeticMean(nums);
   double total = 0;
 
   // you don't need to sort to find the standard deviation
-  for (int i = 0; i < nums.size(); i++) {
+  for (unsigned int i = 0; i < nums.size(); i++) {
     total += pow(nums[i] - mean, 2);
   }
 
@@ -74,6 +104,7 @@ int main() {
     int num;
     cin >> num;
     nums.push_back(num);
+    cout << num << endl;
   }
 
   // Process:
@@ -86,7 +117,7 @@ int main() {
   cout << "Result:" << endl;
   cout << "Data:" << endl;
 
-  for (int i = 0; i < nums.size(); i++) {
+  for (unsigned int i = 0; i < nums.size(); i++) {
     cout << nums[i] << endl;
   }
 

@@ -43,11 +43,11 @@ int main() {
   vertexY = c - (b * b) / (4 * a);
 
   // sometimes we get outputs that are -0.00, which we don't want. 
-  // This code rounds everything to 0 to ensure that doesn't happen
+  // This code rounds everything to 0 to ensure that doesn't happe
   x1 = (fabs(x1) < 0.0001) ? 0.00 : x1;
   x2 = (fabs(x2) < 0.0001) ? 0.00 : x2;
   vertexX = (fabs(vertexX) < 0.0001) ? 0.00 : vertexX;
-  vertexY = (fabs(x1) < 0.0001) ? 0.00 : vertexY;
+  vertexY = (fabs(vertexY) < 0.0001) ? 0.00 : vertexY;
     
   // Output:
   cout << fixed << setprecision(2);

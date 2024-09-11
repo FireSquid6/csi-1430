@@ -41,6 +41,12 @@ int main() {
 
   vertexX = - b / (2 * a);
   vertexY = c - (b * b) / (4 * a);
+
+  // sometimes we get outputs that are -0.00, which we don't want. This code is supposed to stop that:
+  x1 = (fabs(x1) < 0.0001) ? 0.00 : x1;
+  x2 = (fabs(x2) < 0.0001) ? 0.00 : x2;
+  vertexX = (fabs(vertexX) < 0.0001) ? 0.00 : vertexX;
+  vertexY = (fabs(x1) < 0.0001) ? 0.00 : vertexY;
     
   // Output:
   cout << fixed << setprecision(2);

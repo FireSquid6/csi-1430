@@ -1,10 +1,10 @@
 /*
  * Author: Jonathan Deiss
- * Assignment Title:
- * Assignment Description:
- * Due Date:
- * Date Created:
- * Date Last Modified:
+ * Assignment Title: Choose Game Difficulty
+ * Assignment Description: Shows prompts to user using a loop
+ * Due Date: 09/16/2024
+ * Date Created: 09/16/2024
+ * Date Last Modified: 09/16/2024
  */
 #include <iostream>
 

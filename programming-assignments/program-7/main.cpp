@@ -8,34 +8,43 @@
  */
 #include <iostream>
 #include <iomanip>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 int main() {
   // Data Abstraction:
-  double scores[5];
+  vector<double> scores;
 
   double average;
   char letterGrade;
-  double minimum = 999999.0;  // really high number
-  double maximium = -1.0; // shouldn't be possible
+  double minimum; 
+  double maximium; 
+  double median;
     
   // Input:
   cout << "Please Enter Five Test Scores." << endl; 
 
   for (int i = 0; i < 5; i++) {
-    cin >> scores[i];
+    double temp;
+    cin >> temp;
+    scores.push_back(temp);
   }
     
 
   // Process:
+  // sorting is technically not necessary, since median, mean, max, and min can all be found in O(n) time
+  // finding the median is kinda hard though, so we'll just sort the vector
+  //
+  // https://en.wikipedia.org/wiki/Median_of_medians
+
+  sort(scores.begin(), scores.end(), greater<double>());
+
+  maximium = scores.at(0);
+  minimum = scores.at(scores.size() -1);
+  median = scores.at(scores.size() / 2);
   for (int i = 0; i < 5; i++) {
-    if (scores[i] < minimum) {
-      minimum = scores[i];
-    }
-    if (scores[i] > maximium) {
-      maximium = scores[i];
-    }
-    average += scores[i];
+    average += scores.at(i);
   }
   average /= 5;
 
@@ -64,10 +73,12 @@ int main() {
   cout << "Grade   = " << letterGrade << endl;
   cout << "Minimum = " << minimum << endl;
   cout << "Maximum = " << maximium << endl;
+  cout << "Median  = " << median << endl;
 
     
   // Assumptions:
   // - nothing in scores is negative or greater than 100.0
+  // - everything in scores is a valid double that can be parsed
 
   return 0;
 }

@@ -17,6 +17,7 @@ int main() {
   // Data Abstraction:
   string input;
   string secretMessage = "";
+  string value;
 
   // Input:
   input = "Lorem Ipsum is simply dummy text of the printing and typesetting "
@@ -36,17 +37,26 @@ int main() {
   secretMessage.push_back('#');
 
   // 5. Replace the character at the 4th index position with 'FoURTH'
+  secretMessage.replace(3, 6, "FoURTH");
 
   // 6. Insert "234" where there is an occurence of the character 'H'
+  int location = secretMessage.find('H');
+  secretMessage.insert(location, "234");
 
   // 7. Get the last 3 characters of the secret message
+  value = secretMessage.substr(secretMessage.length() - 3, secretMessage.length());
 
   // 8. convert the first occurence of the character 'o' to uppercase
+  location = secretMessage.find('o');
+  secretMessage.replace(location, 1, "O");
 
   // 9. convert the first occurence of the character 'U' to lowercase
+  location = secretMessage.find('U');
+  secretMessage.replace(location, 1, "u");
 
   // Output:
   cout << secretMessage << endl;
+  cout << value << endl;
 
   // Assumptions:
 

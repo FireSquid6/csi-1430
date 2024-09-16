@@ -33,7 +33,7 @@ int main() {
     
   // echo input
   cout << fixed << setprecision(2);
-  for (int i = 0; i < scores.size(); i++) {
+  for (unsigned int i = 0; i < scores.size(); i++) {
     cout << scores.at(i) << " ";
   }
   cout << endl << endl;
@@ -77,8 +77,8 @@ int main() {
   // Output:
   cout << "Average = " << average << endl;
   cout << "Grade   = " << letterGrade << endl;
-  cout << "Minimum = " << minimum << endl;
-  cout << "Maximum = " << maximium << endl;
+  cout << "Min     = " << minimum << endl;
+  cout << "Max     = " << maximium << endl;
   cout << "Median  = " << median << endl;
 
     

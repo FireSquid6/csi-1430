@@ -21,7 +21,7 @@ int main() {
   // Output:
   while (choice == 'y') {
     cout << "1. Easy" << endl;
-    cout << "2. Medium" << endl;
+    cout << "2. Intermediate" << endl;
     cout << "3. Hard" << endl;
     cout << "Choose the Difficulty Level:" << endl;
 
@@ -32,7 +32,7 @@ int main() {
         cout << " EASY " << endl;
         break;
       case 2:
-        cout << " MEDIUM " << endl;
+        cout << " INTERMEDIATE " << endl;
         break;
       case 3:
         cout << " HARD " << endl;

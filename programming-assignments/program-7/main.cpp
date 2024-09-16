@@ -1,10 +1,10 @@
 /*
  * Author: Jonathan Deiss
- * Assignment Title:
- * Assignment Description:
- * Due Date:
- * Date Created:
- * Date Last Modified:
+ * Assignment Title: Letter Grade
+ * Assignment Description: Does various calculations on grades
+ * Due Date: 09/18/2024
+ * Date Created: 09/16/2024
+ * Date Last Modified: 09/16/2024
  */
 #include <iostream>
 #include <iomanip>
@@ -31,10 +31,17 @@ int main() {
     scores.push_back(temp);
   }
     
+  // echo input
+  cout << fixed << setprecision(2);
+  for (int i = 0; i < scores.size(); i++) {
+    cout << scores.at(i) << " ";
+  }
+  cout << endl << endl;
 
   // Process:
-  // sorting is technically not necessary, since median, mean, max, and min can all be found in O(n) time
-  // finding the median is kinda hard though, so we'll just sort the vector
+  // sorting is technically not necessary, since median, mean, max, and min 
+  // can all be found in O(n) time. finding the median is kinda hard though, 
+  // so we'll just sort the vector
   //
   // https://en.wikipedia.org/wiki/Median_of_medians
 
@@ -68,7 +75,6 @@ int main() {
   }
     
   // Output:
-  cout << fixed << setprecision(2) << endl;
   cout << "Average = " << average << endl;
   cout << "Grade   = " << letterGrade << endl;
   cout << "Minimum = " << minimum << endl;

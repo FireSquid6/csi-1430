@@ -28,28 +28,35 @@ int main() {
   cout << "Please enter 2 integers: ";
   cin >> high;
   cin >> low;
+  cout << high << " " << low << endl << endl;
 
-  cout << "I'm thinking of a number between " << low << " and " << high << "." << endl;
-    
+  cout << "I'm thinking of a number between ";
+  cout << low << " and " << high << "." << endl << endl;
+
   // Process:
   randomNumber = rand() % (high - low + 1) + low;
   while (guess != randomNumber) {
-
     cout << "Enter guess: ";
     cin >> guess;
+    cout << guess;
     guesses += 1;
 
     if (guess < randomNumber) {
       cout << " - Too low!" << endl;
-    } else if (guess > randomNumber) {
+    }
+    else if (guess > randomNumber) {
       cout << " - Too high!" << endl;
-    } else {
-      cout << endl << "Correct, it took you " << guesses << " tries to guess my number." << endl;
+    }
+    else {
+      cout << endl;
+      cout << "Correct, it took you " << guesses;
+      cout << " tries to guess my number.";
+      cout << endl;
     }
   }
-    
+
   // Output:
-    
+
   // Assumptions:
 
   return 0;

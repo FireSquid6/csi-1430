@@ -5,4 +5,8 @@ if [ ! -f ./main.cpp ]; then
   exit 1
 fi
 
-g++ ./main.cpp -o program.o && ./program.o
+echo "COMPILING..."
+g++ ./main.cpp -o program.o
+echo ""
+echo "RUNNING THE PROGRAM:"
+./program.o

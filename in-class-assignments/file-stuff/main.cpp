@@ -22,6 +22,7 @@ int main() {
   // Process:
   inFile.open(fileName);
   inFile >> value;
+  inFile.close();
     
   // Output:
   cout << value << endl;

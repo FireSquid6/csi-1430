@@ -25,7 +25,10 @@ int main() {
     cout << "3. Hard" << endl;
     cout << "Choose the Difficulty Level:" << endl;
 
-    cin >> difficultyLevel;
+    if (!(cin >> difficultyLevel)) {
+      cin.clear();
+      cin.ignore();
+    }
 
     switch (difficultyLevel) {
       case 1:

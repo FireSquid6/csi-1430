@@ -21,12 +21,13 @@ int main() {
     
   // Process:
   inFile.open(fileName);
-  inFile >> value;
+  
+  while (inFile >> value) {
+    cout << value << endl;
+  }
+
   inFile.close();
     
-  // Output:
-  cout << value << endl;
-
   // Assumptions:
 
   return 0;

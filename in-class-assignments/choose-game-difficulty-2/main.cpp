@@ -38,8 +38,7 @@ int main() {
         cout << " HARD " << endl;
         break;
       default:
-        cout << "Please choose a valid difficulty level:" << endl;
-        cin >> difficultyLevel;
+        cout << "Invalid Input! Please try again!" << endl;
         break;
     }
 

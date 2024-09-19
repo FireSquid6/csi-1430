@@ -61,7 +61,7 @@ int main() {
       cout << " - Too high" << endl;
     }
     else {
-      cout << endl;
+      cout << endl << endl;
       cout << "Correct, it took you " << guesses;
       cout << " tries to guess my number.";
       cout << endl;

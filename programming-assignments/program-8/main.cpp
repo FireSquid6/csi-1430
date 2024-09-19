@@ -43,11 +43,15 @@ int main() {
   // cout << "Ok the secret number is: " << randomNumber << endl;
 
   while (guess != randomNumber) {
+    // Input:
     cout << "Enter guess: ";
     cin >> guess;
     cout << guess;
+
+    // Process:
     guesses += 1;
 
+    // Output:
     if (guess < randomNumber) {
       cout << " - Too low!" << endl;
     }

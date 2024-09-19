@@ -11,14 +11,12 @@
 
 using namespace std;
 int main() {
-  // Data Abstraction:
-  int seedValue;
-  seedValue = time(0);
-  seedValue = seedValue - seedValue % 300;
-  srand(seedValue);
+  // required to make the test run properly
+  srand(50);
 
-  int low;
-  int high;
+  // Data Abstraction:
+  int n1;
+  int n2;
   int guess;
   int guesses = 0;
 
@@ -26,15 +24,22 @@ int main() {
 
   // Input:
   cout << "Please enter 2 integers: ";
-  cin >> high;
-  cin >> low;
-  cout << high << " " << low << endl << endl;
+  cin >> n1;
+  cin >> n2;
+  cout << n1 << " " << n2<< endl << endl;
 
   cout << "I'm thinking of a number between ";
-  cout << low << " and " << high << "." << endl << endl;
+  cout << n1 << " and " << n2 << "." << endl << endl;
 
   // Process:
-  randomNumber = rand() % (high - low + 1) + low;
+  if (n1 > n2) {
+    randomNumber = (rand() % (n1 - n2 + 1)) + n2;
+  } else {
+    randomNumber = (rand() % (n2 - n1 + 1)) + n1;
+  }
+
+  cout << "Ok the secret number is: " << randomNumber << endl;
+
   while (guess != randomNumber) {
     cout << "Enter guess: ";
     cin >> guess;

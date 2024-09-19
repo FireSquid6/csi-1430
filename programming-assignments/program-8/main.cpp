@@ -34,11 +34,13 @@ int main() {
   // Process:
   if (n1 > n2) {
     randomNumber = (rand() % (n1 - n2 + 1)) + n2;
-  } else {
+  } 
+  else {
     randomNumber = (rand() % (n2 - n1 + 1)) + n1;
   }
 
-  cout << "Ok the secret number is: " << randomNumber << endl;
+  // used when debugging to ensure that the test case's random matches the program's random
+  // cout << "Ok the secret number is: " << randomNumber << endl;
 
   while (guess != randomNumber) {
     cout << "Enter guess: ";

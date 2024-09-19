@@ -36,7 +36,7 @@ int main() {
   }
 
   cout << "I'm thinking of a number between ";
-  cout << n1 << " and " << n2 << "." << endl << endl;
+  cout << n2 << " and " << n1 << "." << endl << endl;
 
   randomNumber = (rand() % (n1 - n2 + 1)) + n2;
 
@@ -64,7 +64,6 @@ int main() {
       cout << endl << endl;
       cout << "Correct, it took you " << guesses;
       cout << " tries to guess my number.";
-      cout << endl;
     }
     cout << endl;
   }

@@ -54,10 +54,10 @@ int main() {
 
     // Output:
     if (guess < randomNumber) {
-      cout << " - Too low!" << endl;
+      cout << " - Too low" << endl;
     }
     else if (guess > randomNumber) {
-      cout << " - Too high!" << endl;
+      cout << " - Too high" << endl;
     }
     else {
       cout << endl;
@@ -65,6 +65,7 @@ int main() {
       cout << " tries to guess my number.";
       cout << endl;
     }
+    cout << endl;
   }
 
   // Output:

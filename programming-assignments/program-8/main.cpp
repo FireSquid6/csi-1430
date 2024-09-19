@@ -39,7 +39,8 @@ int main() {
     randomNumber = (rand() % (n2 - n1 + 1)) + n1;
   }
 
-  // used when debugging to ensure that the test case's random matches the program's random
+  // used when debugging to ensure that the test case's random 
+  // matches the program's random
   // cout << "Ok the secret number is: " << randomNumber << endl;
 
   while (guess != randomNumber) {

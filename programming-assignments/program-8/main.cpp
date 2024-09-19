@@ -28,16 +28,17 @@ int main() {
   cin >> n2;
   cout << n1 << " " << n2<< endl << endl;
 
+  // we need to make sure n1 is always the bigger number
+  if (n1 < n2) {
+    int temp = n1;
+    n1 = n2;
+    n2 = temp;
+  }
+
   cout << "I'm thinking of a number between ";
   cout << n1 << " and " << n2 << "." << endl << endl;
 
-  // Process:
-  if (n1 > n2) {
-    randomNumber = (rand() % (n1 - n2 + 1)) + n2;
-  } 
-  else {
-    randomNumber = (rand() % (n2 - n1 + 1)) + n1;
-  }
+  randomNumber = (rand() % (n1 - n2 + 1)) + n2;
 
   // used when debugging to ensure that the test case's random 
   // matches the program's random

@@ -33,6 +33,7 @@ int main() {
   } while (!inputFile.is_open());
     
   // Process:
+  // use getline?
   do {
     inputFile >> currentNumber;
     cout << currentNumber << endl;

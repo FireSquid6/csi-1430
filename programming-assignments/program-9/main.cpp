@@ -1,10 +1,10 @@
 /*
  * Author: Jonathan Deiss
- * Assignment Title:
- * Assignment Description:
- * Due Date:
- * Date Created:
- * Date Last Modified:
+ * Assignment Title: Min Max Sum Count Average
+ * Assignment Description: Read and process numbers from a file
+ * Due Date: 09/25/2024
+ * Date Created: 09/23/2024
+ * Date Last Modified: 09/23/2024
  */
 #include <iostream>
 #include <fstream>
@@ -26,13 +26,14 @@ int main() {
 
   // Input:
   do {
-    cout << "Enter File Name:";
+    cout << "Enter Data File Name: ";
     cin >> fileName;
+    cout << fileName << endl;
 
     inFile.open(fileName);
 
     if (!inFile.is_open()) {
-      cout << "Error: File is not open!" << endl;
+      cout << "Error: File Not Open." << endl;
     }
   } while (!inFile.is_open());
     
@@ -41,6 +42,7 @@ int main() {
 
   while (inFile >> currentNumber) {
     sum += currentNumber;
+    count += 1;
     
     if (currentNumber < min) {
       min = currentNumber;
@@ -57,6 +59,7 @@ int main() {
     
   // Output:
   cout << fixed << setprecision(2);
+  cout << endl; 
   cout << "Min = " << min << endl;
   cout << "Max = " << max << endl;
   cout << "Sum = " << sum << endl;

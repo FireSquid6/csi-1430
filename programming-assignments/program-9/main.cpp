@@ -15,7 +15,7 @@ using namespace std;
 int main() {
   // Data Abstraction:
   string fileName;
-  ifstream inputFile;
+  ifstream inFile;
   int currentNumber;
 
   int min = 9999999;
@@ -26,19 +26,20 @@ int main() {
 
   // Input:
   do {
-    cout << "Enter Data File Name: ";
+    cout << "Enter File Name:";
     cin >> fileName;
-    inputFile = ifstream(fileName);
 
-  } while (!inputFile.is_open());
+    inFile.open(fileName);
+
+    if (!inFile.is_open()) {
+      cout << "Error: File is not open!" << endl;
+    }
+  } while (!inFile.is_open());
     
-  // Process:
-  // use getline?
-  do {
-    inputFile >> currentNumber;
-    cout << currentNumber << endl;
 
-    count += 1;
+
+
+  while (inFile >> currentNumber) {
     sum += currentNumber;
     
     if (currentNumber < min) {
@@ -48,11 +49,11 @@ int main() {
     if (currentNumber > max) {
       max = currentNumber;
     }
-  } while (!inputFile.eof());
+  }
 
   average = static_cast<double>(sum) / static_cast<double>(count);
 
-  inputFile.close();
+  inFile.close();
     
   // Output:
   cout << fixed << setprecision(2);

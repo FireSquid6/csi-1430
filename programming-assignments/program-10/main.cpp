@@ -5,13 +5,16 @@
 using namespace std;
 
 int main() {
-  string filename, command;
+  string filename; 
+  string command;
   int aCount = 0;
   int eCount = 0;
   int iCount = 0;
   int oCount = 0;
   int uCount = 0;
   int yCount = 0;
+  ifstream inputFile;
+  ofstream outputFile;
 
 
   cout << "Enter File Name: ";
@@ -24,13 +27,13 @@ int main() {
     return 1;
   }
 
-  ifstream inputFile(filename);
+  inputFile.open(filename);
   if (!inputFile.is_open()) {
     cout << "Error: File did NOT open.\n";
     return 1;
   }
 
-  ofstream outputFile("output");
+  outputFile.open("output.txt");
   if (!outputFile.is_open()) {
     cout << "Error: Failed to open output file.\n";
     return 1;
@@ -73,13 +76,13 @@ int main() {
 
   }
 
-  cout << "Frequency of vowels:\n";
-  cout << "   A     " << aCount << "\n";
-  cout << "   E     " << eCount << "\n";
-  cout << "   I     " << iCount << "\n";
-  cout << "   O     " << oCount << "\n";
-  cout << "   U     " << uCount << "\n";
-  cout << "   Y     " << yCount << "\n";
+  cout << "Frequency of vowels:" << endl;
+  cout << "   A     " << aCount << endl;
+  cout << "   E     " << eCount << endl;
+  cout << "   I     " << iCount << endl;
+  cout << "   O     " << oCount << endl;
+  cout << "   U     " << uCount << endl;
+  cout << "   Y     " << yCount << endl;
 
   outputFile.close();
   inputFile.close();

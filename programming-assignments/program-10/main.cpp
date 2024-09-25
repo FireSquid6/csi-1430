@@ -28,6 +28,7 @@ int main() {
   // Data Abstraction
   string filename;
   string command;
+  string error;
   int aCount = 0;
   int eCount = 0;
   int iCount = 0;
@@ -52,24 +53,24 @@ int main() {
 
   // Process
   if (command != "encrypt" && command != "decrypt") {
-    cout << "Error: Bad Command.\n";
+    error = "Error: Bad command.";
     flag = false;
   }
 
   inputFile.open(filename);
   if (!inputFile.is_open()) {
-    cout << "Error: File did NOT open.\n";
+    error = "Error: File did NOT open.";
     flag = false;
   }
 
   outputFile.open("message");
   if (!outputFile.is_open()) {
-    cout << "Error: Failed to open output file.\n";
+    error = "Error: Failed to open output file.";
     flag = false;
   }
 
   if (flag) {
-
+    // Process
     while (inputFile.get(c)) {
       if (command == "encrypt") {
         newC = c + 3;
@@ -98,11 +99,11 @@ int main() {
         break;
       }
 
-      // TODO - use a stringstream so that I'm not breaking her stupid rules
       outString << newC;
       outputFile << newC;
-    }
+    } 
 
+    // Output
     cout << endl;
     cout << outString.str() << endl;
 
@@ -114,6 +115,9 @@ int main() {
     cout << "   O  " << intToSpacedString(oCount) << endl;
     cout << "   U  " << intToSpacedString(uCount) << endl;
     cout << "   Y  " << intToSpacedString(yCount) << endl;
+  } else {
+    // Output
+    cout << error << endl;
   }
 
   outputFile.close();

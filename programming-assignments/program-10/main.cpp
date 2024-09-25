@@ -50,7 +50,7 @@ int main() {
       newC = c - 3;
     }
 
-    switch (toupper(c)) {
+    switch (toupper(newC)) {
     case 'A':
       aCount++;
       break;

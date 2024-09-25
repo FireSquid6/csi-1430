@@ -9,6 +9,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -24,6 +25,7 @@ string intToSpacedString(int i) {
 }
 
 int main() {
+  // Data Abstraction
   string filename;
   string command;
   int aCount = 0;
@@ -34,11 +36,12 @@ int main() {
   int yCount = 0;
   ifstream inputFile;
   ofstream outputFile;
+  stringstream outString;
   char c;
   char newC;
-
   bool flag = true;
 
+  // Input
   cout << "Enter File Name: ";
   cin >> filename;
   cout << filename << endl;
@@ -46,6 +49,8 @@ int main() {
   cin >> command;
   cout << command << endl;
 
+
+  // Process
   if (command != "encrypt" && command != "decrypt") {
     cout << "Error: Bad Command.\n";
     flag = false;
@@ -64,7 +69,7 @@ int main() {
   }
 
   if (flag) {
-    cout << endl;
+
     while (inputFile.get(c)) {
       if (command == "encrypt") {
         newC = c + 3;
@@ -94,10 +99,14 @@ int main() {
       }
 
       // TODO - use a stringstream so that I'm not breaking her stupid rules
-      cout << newC;
+      outString << newC;
       outputFile << newC;
     }
-    cout << endl << endl;
+
+    cout << endl;
+    cout << outString.str() << endl;
+
+    cout << endl;
     cout << "Letter Frequency" << endl;
     cout << "   A  " << intToSpacedString(aCount) << endl;
     cout << "   E  " << intToSpacedString(eCount) << endl;

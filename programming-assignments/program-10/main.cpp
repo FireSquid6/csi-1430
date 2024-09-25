@@ -28,7 +28,7 @@ int main() {
   // Data Abstraction
   string filename;
   string command;
-  string error;
+  stringstream error;
   int aCount = 0;
   int eCount = 0;
   int iCount = 0;
@@ -53,19 +53,19 @@ int main() {
 
   // Process
   if (command != "encrypt" && command != "decrypt") {
-    error = "Error: Bad command.";
+    error << "Error: Bad command." << endl;
     flag = false;
   }
 
   inputFile.open(filename);
   if (!inputFile.is_open()) {
-    error = "Error: File did NOT open.";
+    error << "Error: File did NOT open." << endl;
     flag = false;
   }
 
   outputFile.open("message");
   if (!outputFile.is_open()) {
-    error = "Error: Failed to open output file.";
+    error << "Error: Failed to open output file." << endl;
     flag = false;
   }
 
@@ -117,7 +117,7 @@ int main() {
     cout << "   Y  " << intToSpacedString(yCount) << endl;
   } else {
     // Output
-    cout << error << endl;
+    cout << error.str();
   }
 
   outputFile.close();

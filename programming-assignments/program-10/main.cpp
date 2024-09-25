@@ -6,6 +6,14 @@ using namespace std;
 
 int main() {
   string filename, command;
+  int aCount = 0;
+  int eCount = 0;
+  int iCount = 0;
+  int oCount = 0;
+  int uCount = 0;
+  int yCount = 0;
+
+
   cout << "Enter File Name: ";
   cin >> filename;
   cout << "Enter encrypt or decrypt: ";
@@ -28,12 +36,7 @@ int main() {
     return 1;
   }
 
-  int aCount = 0;
-  int eCount = 0;
-  int iCount = 0;
-  int oCount = 0;
-  int uCount = 0;
-  int yCount = 0;
+
 
   char c;
   char newC;

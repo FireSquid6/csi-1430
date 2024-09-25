@@ -15,6 +15,8 @@ int main() {
   int yCount = 0;
   ifstream inputFile;
   ofstream outputFile;
+  char c;
+  char newC;
 
 
   cout << "Enter File Name: ";
@@ -41,8 +43,7 @@ int main() {
 
 
 
-  char c;
-  char newC;
+
   while (inputFile.get(c)) {
     if (command == "encrypt") {
       newC = c + 3;

@@ -13,7 +13,12 @@
 
 using namespace std;
 
-
+//************************************************************
+// description: Converts an integer to a string with length 5
+// return: string
+// pre: i is a valid integer
+// post: returns a string with 5 spaces and the integer
+//************************************************************
 string intToSpacedString(int i) {
   string s = to_string(i);
 

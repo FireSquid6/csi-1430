@@ -50,7 +50,7 @@ int main() {
       newC = c - 3;
     }
 
-    switch (toupper(newC)) {
+    switch (toupper(c)) {
     case 'A':
       aCount++;
       break;
@@ -75,7 +75,7 @@ int main() {
     outputFile << newC;
 
   }
-
+  cout << endl;
   cout << "Frequency of vowels:" << endl;
   cout << "   A     " << aCount << endl;
   cout << "   E     " << eCount << endl;

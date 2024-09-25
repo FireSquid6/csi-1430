@@ -16,8 +16,8 @@ int main() {
     return 1;
   }
 
-  ifstream file(filename);
-  if (!file.is_open()) {
+  ifstream inputFile(filename);
+  if (!inputFile.is_open()) {
     cout << "Error: File did NOT open.\n";
     return 1;
   }
@@ -37,7 +37,7 @@ int main() {
 
   char c;
   char newC;
-  while (file.get(c)) {
+  while (inputFile.get(c)) {
     if (command == "encrypt") {
       newC = c + 3;
     } else {
@@ -77,6 +77,9 @@ int main() {
   cout << "   O     " << oCount << "\n";
   cout << "   U     " << uCount << "\n";
   cout << "   Y     " << yCount << "\n";
+
+  outputFile.close();
+  inputFile.close();
 
   return 0;
 }

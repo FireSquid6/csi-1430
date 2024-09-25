@@ -12,6 +12,17 @@
 
 using namespace std;
 
+
+string intToSpacedString(int i) {
+  string s = to_string(i);
+
+  while (s.length() < 5) {
+    s = " " + s;
+  }
+
+  return s;
+}
+
 int main() {
   string filename;
   string command;
@@ -30,8 +41,10 @@ int main() {
 
   cout << "Enter File Name: ";
   cin >> filename;
+  cout << filename << endl;
   cout << "Enter encrypt or decrypt: ";
   cin >> command;
+  cout << command << endl;
 
   if (command != "encrypt" && command != "decrypt") {
     cout << "Error: Bad Command.\n";
@@ -44,14 +57,14 @@ int main() {
     flag = false;
   }
 
-  outputFile.open("output.txt");
+  outputFile.open("message");
   if (!outputFile.is_open()) {
     cout << "Error: Failed to open output file.\n";
     flag = false;
   }
 
   if (flag) {
-
+    cout << endl;
     while (inputFile.get(c)) {
       if (command == "encrypt") {
         newC = c + 3;
@@ -80,17 +93,18 @@ int main() {
         break;
       }
 
+      // TODO - use a stringstream so that I'm not breaking her stupid rules
       cout << newC;
       outputFile << newC;
     }
-    cout << endl;
-    cout << "Frequency of vowels:" << endl;
-    cout << "   A     " << aCount << endl;
-    cout << "   E     " << eCount << endl;
-    cout << "   I     " << iCount << endl;
-    cout << "   O     " << oCount << endl;
-    cout << "   U     " << uCount << endl;
-    cout << "   Y     " << yCount << endl;
+    cout << endl << endl;
+    cout << "Letter Frequency" << endl;
+    cout << "   A  " << intToSpacedString(aCount) << endl;
+    cout << "   E  " << intToSpacedString(eCount) << endl;
+    cout << "   I  " << intToSpacedString(iCount) << endl;
+    cout << "   O  " << intToSpacedString(oCount) << endl;
+    cout << "   U  " << intToSpacedString(uCount) << endl;
+    cout << "   Y  " << intToSpacedString(yCount) << endl;
   }
 
   outputFile.close();

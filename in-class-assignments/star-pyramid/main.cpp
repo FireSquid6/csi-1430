@@ -13,12 +13,15 @@ int main() {
   // Data Abstraction:
   int height;
   int spaces;
+  char ch;
   int stars;
   int i;
     
   // Input:
   cout << "Please enter the height of the pyramid:";
   cin >> height;
+  cout << "Please enter the character you would like to use for the pyramid:";
+  cin >> ch;
     
   // Process:
   spaces = height - 1;
@@ -28,7 +31,7 @@ int main() {
       cout << " ";
     }
     for (int j = 0; j < stars; j++) {
-      cout << "*";
+      cout << ch;
     }
     cout << endl;
 

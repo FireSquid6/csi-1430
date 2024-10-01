@@ -50,7 +50,7 @@ int main() {
     inFile.open(filename);
 
     if (!inFile.is_open()) {
-      cout << "Error: File did NOT open." << endl;
+      cout << "Error: File Failed to open" << endl;
       inFile.close();
     }
   } while (!inFile.is_open());

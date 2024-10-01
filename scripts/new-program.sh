@@ -25,7 +25,6 @@ fi
 mkdir -p "$DIRECTORY"
 
 touch "$DIRECTORY/main.cpp"
-touch "$DIRECTORY/expected-output.txt"
 
 echo "/*
  * Author: Jonathan Deiss

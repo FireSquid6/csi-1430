@@ -50,12 +50,11 @@ int main() {
     inFile >> command;
     inFile >> x;
     inFile >> y;
-    cout << command;
-    
+
     if (command == "START") {
       startX = x;
       startY = y;
-    } else if (command == "END") {
+    } else if (command == "STOP") {
       endX = x;
       endY = y;
       continueLoop = false;

@@ -30,12 +30,12 @@ int main() {
   int lastX;
   int lastY;
 
-  double total_distance = 0;
+  double totalDistance = 0;
   int points = 0;
-  double start_distance = 0;
+  double startDistance = 0;
   double dist;
-  double average_distance = 0;
-  double total_start_distance = 0;
+  double averageDistance = 0;
+  double totalStartDistance = 0;
 
   // dummy var used to skip the first two lines
   string dummy;
@@ -71,8 +71,8 @@ int main() {
 
       started = true;
     } else if ((command == "STOP" || command == "DATA") && started) {
-      total_distance += sqrt(pow(x - lastX, 2) + pow(y - lastY, 2));
-      total_start_distance += sqrt(pow(x - startX, 2) + pow(y - startY, 2));
+      totalDistance += sqrt(pow(x - lastX, 2) + pow(y - lastY, 2));
+      totalStartDistance += sqrt(pow(x - startX, 2) + pow(y - startY, 2));
       points += 1;
 
       if (command == "STOP") {
@@ -86,15 +86,15 @@ int main() {
       }
     }
   }
-  average_distance = total_start_distance / points;
-  start_distance = sqrt(pow(endX - startX, 2) + pow(endY - startY, 2));
+  averageDistance = totalStartDistance / points;
+  startDistance = sqrt(pow(endX - startX, 2) + pow(endY - startY, 2));
     
   // Output:
   cout << fixed << setprecision(1);
   cout << "Final Location: (" << endX << ", " << endY << ")" << endl;
-  cout << "Total distance traveled " << total_distance << endl;
-  cout << "Distance to starting point " << start_distance << endl;
-  cout << "Average distance to start point = " << average_distance << endl;
+  cout << "Total distance traveled " << totalDistance << endl;
+  cout << "Distance to starting point " << startDistance << endl;
+  cout << "Average distance to start point = " << averageDistance << endl;
     
   // Assumptions:
 

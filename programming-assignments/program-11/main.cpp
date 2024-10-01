@@ -43,14 +43,14 @@ int main() {
     
   // Input:
   do {
-    cout << "Enter the file name: ";
+    cout << "Please Enter The Name of The Data File:";
     cin >> filename;
     cout << filename << endl;
 
     inFile.open(filename);
 
     if (!inFile.is_open()) {
-      cout << "Error: File Failed to open" << endl;
+      cout << "Error: File Failed to open." << endl;
       inFile.close();
     }
   } while (!inFile.is_open());

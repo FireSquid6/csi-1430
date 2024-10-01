@@ -1,10 +1,10 @@
 /*
  * Author: Jonathan Deiss
- * Assignment Title:
- * Assignment Description:
- * Due Date:
- * Date Created:
- * Date Last Modified:
+ * Assignment Title: GPS
+ * Assignment Description: GPS Calculations
+ * Due Date: 10/2/2024
+ * Date Created: 09/30/2024
+ * Date Last Modified: 09/30/2024
  */
 #include <iostream>
 #include <iomanip>
@@ -45,11 +45,13 @@ int main() {
   do {
     cout << "Enter the file name: ";
     cin >> filename;
+    cout << filename << endl;
 
     inFile.open(filename);
 
     if (!inFile.is_open()) {
       cout << "Error: File did NOT open." << endl;
+      inFile.close();
     }
   } while (!inFile.is_open());
     
@@ -88,6 +90,8 @@ int main() {
   }
   averageDistance = totalStartDistance / points;
   startDistance = sqrt(pow(endX - startX, 2) + pow(endY - startY, 2));
+
+  inFile.close();
     
   // Output:
   cout << fixed << setprecision(1);

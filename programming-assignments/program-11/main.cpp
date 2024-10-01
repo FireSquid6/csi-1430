@@ -21,15 +21,15 @@ int main() {
   bool started = false;
   bool seenError = false;
   string command;
-  int x;
-  int y;
+  double x;
+  double y;
 
-  int startX;
-  int startY;
-  int endX;
-  int endY;
-  int lastX;
-  int lastY;
+  double startX;
+  double startY;
+  double endX;
+  double endY;
+  double lastX;
+  double lastY;
 
   double totalDistance = 0;
   int points = 0;
@@ -96,6 +96,7 @@ int main() {
     
   // Output:
   cout << fixed << setprecision(1);
+  cout << endl;
   cout << "Final Location: (" << endX << ", " << endY << ")" << endl;
   cout << "Total distance traveled " << totalDistance << endl;
   cout << "Distance to starting point " << startDistance << endl;

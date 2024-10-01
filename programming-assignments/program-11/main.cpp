@@ -19,6 +19,7 @@ int main() {
 
   bool continueLoop = true;
   bool started = false;
+  bool seenError = false;
   string command;
   int x;
   int y;
@@ -51,7 +52,6 @@ int main() {
 
     if (!inFile.is_open()) {
       cout << "Error: File Failed to open." << endl;
-      inFile.close();
     }
   } while (!inFile.is_open());
     
@@ -59,7 +59,7 @@ int main() {
   getline(inFile, dummy);
   getline(inFile, dummy);
 
-  while (continueLoop) {
+  while (continueLoop && !seenError) {
     inFile >> command;
     inFile >> x;
     inFile >> y;
@@ -72,7 +72,8 @@ int main() {
       lastY = y;
 
       started = true;
-    } else if ((command == "STOP" || command == "DATA") && started) {
+    } 
+    else if ((command == "STOP" || command == "DATA") && started) {
       totalDistance += sqrt(pow(x - lastX, 2) + pow(y - lastY, 2));
       totalStartDistance += sqrt(pow(x - startX, 2) + pow(y - startY, 2));
       points += 1;
@@ -82,7 +83,8 @@ int main() {
         endX = x;
         endY = y;
 
-      } else {
+      } 
+      else {
         lastX = x;
         lastY = y;
       }

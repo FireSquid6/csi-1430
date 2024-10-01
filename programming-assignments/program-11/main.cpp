@@ -34,7 +34,6 @@ int main() {
   double totalDistance = 0;
   int points = 0;
   double startDistance = 0;
-  double dist;
   double averageDistance = 0;
   double totalStartDistance = 0;
 

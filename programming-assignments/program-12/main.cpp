@@ -17,7 +17,7 @@ using namespace std;
 // description: Reads the scores from a file
 // return: the average score of the files or -1 if there are no scores
 // pre: the scores file exists and is open
-// post: scores file is closed
+// post: scoreFile is at the end of the file
 //************************************************************
 double getAverage(ifstream *scoreFile) {
   int scoresTotal = 0;
@@ -106,7 +106,7 @@ int main() {
       currentAverage = getAverage(&scoreFile);
 
       if (currentAverage == -1) {
-        outputString << "No Scores";
+        outputString << "No Grades";
       } 
       else {
         averagesTotal += currentAverage;

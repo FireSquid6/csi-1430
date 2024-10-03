@@ -11,16 +11,47 @@
 #include <fstream>
 
 using namespace std;
+
+
+//************************************************************
+// description: Reads the scores from a file
+// return: the average score of the files or -1 if there are no scores
+// pre: the scores file exists and is open
+// post: scores file is closed
+//************************************************************
+double getAverage(ifstream scoreFile) {
+  int scoresTotal = 0;
+  int scoresCount = 0;
+  int currentScore;
+
+
+  while (scoreFile >> currentScore) {
+    scoresCount += 1;
+    scoresTotal += currentScore;
+  }
+
+
+  return static_cast<double>(scoresTotal) / scoresCount;
+}
+
+
 int main() {
   // Data Abstraction:
   string dataFilename;
+  string outputString;
   ifstream dataFile;
   bool continueLoop = true;
+  string first;
+  string last;
+  string middle;
+  string scoreFilename;
+  ifstream scoreFile;
 
   double minimum = 99999.9;
   double maximum = -1.0;
   double averagesTotal = 0;
   double classAverage;
+  double currentAverage = 0;
   int studentCount = 0;
 
     
@@ -30,38 +61,36 @@ int main() {
   cout << dataFilename << endl;
 
 
-  // TODO - use setw to format output
-    
   // Process:
   dataFile.open(dataFilename);
 
   if (!dataFile.is_open()) {
-    cout << "Error: File did NOT open." << endl;
-    continueLoop = false;
+    cout << "ERROR: File Not Open." << endl;
     dataFile.close();
+
+    return 1;
   }
 
-  while (continueLoop) {
-    // Data Abstraction:
-    // TODO - make this its own function that returns a string
-    double scoresTotal;
-    double scoresAverage;
-    int scoresCount;
-    string first;
-    string last;
-    string middle;
-    string scoreFilename;
-    ifstream scoreFile;
-    
-    // Input:
-    dataFile >> first;
+  while (dataFile >> first) {
     dataFile >> last;
     dataFile >> middle;
 
 
     // Process:
-    scoreFilename = last + first + ".txt";
+    scoreFilename = last + first + ".dat";
     scoreFile.open(scoreFilename);
+
+    if (scoreFile.is_open()) {
+      studentCount += 1;
+      currentAverage = getAverage(scoreFile);
+
+      if (currentAverage == -1) {
+
+      }
+
+    } else {
+      outputString = "No Data File";
+    }
 
     // Output:
 
@@ -69,23 +98,14 @@ int main() {
   classAverage = averagesTotal / studentCount;
 
   // Output:
+  cout << fixed << setprecision(2) << endl;
   cout << "Class Average " << classAverage << endl;
   cout << "Max score " << maximum << endl;
   cout << "Min score " << minimum << endl;
     
-  // Assumptions:
-
   return 0;
 }
 
 
 
-//************************************************************
-// description: Reads the scores from a file
-// return: the string to output
-// pre: the scores file exists and is open
-// post: scores file is closed
-//************************************************************
-string getScores(string scoreFilename) {
 
-}

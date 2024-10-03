@@ -64,27 +64,28 @@ int main() {
   cin >> dataFilename;
   cout << dataFilename << endl;
 
-  // Process:
+  // Input Validation Loop:
   dataFile.open(dataFilename);
 
   if (!dataFile.is_open()) {
     cout << "ERROR: File Not Open." << endl;
     dataFile.close();
 
-    // return is better here but the upload site complains about it
     exit(1);
   }
 
+  // Preperatory Output:
   cout << endl << "Student                  Average" << endl; 
+
+  // Data Processing Loop:
   while (dataFile >> last) {
-    // Data Abstraction
+    // Data Abstraction:
     stringstream outputString;
     ifstream scoreFile;
     string scoreFilename;
     string nameText;
 
-    // Input
-
+    // Input:
     dataFile >> first;
     dataFile >> middle;
 
@@ -94,7 +95,7 @@ int main() {
 
     outputString << setprecision(2) << fixed;
 
-    nameText = first + " " + last;
+    nameText = first + " " + middle + " " + last;
     while (nameText.length() < 25) {
       nameText += " ";
     }
@@ -136,9 +137,11 @@ int main() {
     // Output:
     cout << outputString.str() << endl;
   }
+
+  // Final Processing:
   classAverage = averagesTotal / studentCount;
 
-  // Output:
+  // Final Output:
   cout << endl;
   cout << "Class Average: " << classAverage << endl;
   cout << "Max score: " << maximum << endl;

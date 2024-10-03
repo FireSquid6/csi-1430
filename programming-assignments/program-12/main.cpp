@@ -77,3 +77,15 @@ int main() {
 
   return 0;
 }
+
+
+
+//************************************************************
+// description: Reads the scores from a file
+// return: the string to output
+// pre: the scores file exists and is open
+// post: scores file is closed
+//************************************************************
+string getScores(string scoreFilename) {
+
+}

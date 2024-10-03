@@ -50,14 +50,16 @@ int main() {
   string last;
   string middle;
 
-  double minimum = 99999.9;
-  double maximum = -1.0;
+  bool initializedMaxima = false;
+  double minimum;
+  double maximum;
   double averagesTotal = 0;
   double classAverage;
   double currentAverage = 0;
   int studentCount = 0;
 
   // Input:
+  cout << setprecision(2) << fixed;
   cout << "Enter Name of Data File: ";
   cin >> dataFilename;
   cout << dataFilename << endl;
@@ -73,42 +75,61 @@ int main() {
     exit(1);
   }
 
+  cout << endl << "Student                  Average" << endl; 
   while (dataFile >> last) {
     // Data Abstraction
     stringstream outputString;
     ifstream scoreFile;
     string scoreFilename;
+    string nameText;
 
     // Input
+
     dataFile >> first;
     dataFile >> middle;
 
     // Process:
     scoreFilename = first + last + ".dat";
     scoreFile.open(scoreFilename);
-    outputString << first << " " << middle << " " << last << "    ";
+
+    outputString << setprecision(2) << fixed;
+
+    nameText = first + " " + last;
+    while (nameText.length() < 25) {
+      nameText += " ";
+    }
+    outputString << nameText;
+
 
     if (scoreFile.is_open()) {
-
       currentAverage = getAverage(&scoreFile);
 
       if (currentAverage == -1) {
         outputString << "No Scores";
-      } else {
+      } 
+      else {
         averagesTotal += currentAverage;
         studentCount += 1;
 
-        if (currentAverage < minimum) {
-          minimum = currentAverage;
+        if (initializedMaxima) {
+          if (currentAverage < minimum) {
+            minimum = currentAverage;
+          }
+          if (currentAverage > maximum) {
+            maximum = currentAverage;
+          }
         }
-        if (currentAverage > maximum) {
+        else {
           maximum = currentAverage;
+          minimum = currentAverage;
+          initializedMaxima = true;
         }
 
         outputString << currentAverage;
       }
       scoreFile.close();
-    } else {
+    } 
+    else {
       outputString << "No Data File";
     }
 
@@ -118,10 +139,10 @@ int main() {
   classAverage = averagesTotal / studentCount;
 
   // Output:
-  cout << fixed << setprecision(2);
-  cout << "Class Average " << classAverage << endl;
-  cout << "Max score " << maximum << endl;
-  cout << "Min score " << minimum << endl;
+  cout << endl;
+  cout << "Class Average: " << classAverage << endl;
+  cout << "Max score: " << maximum << endl;
+  cout << "Min score: " << minimum << endl;
 
   return 0;
 }

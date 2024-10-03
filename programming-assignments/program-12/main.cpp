@@ -28,6 +28,9 @@ int main() {
   cout << "Enter Name of Data File: ";
   cin >> dataFilename;
   cout << dataFilename << endl;
+
+
+  // TODO - use setw to format output
     
   // Process:
   dataFile.open(dataFilename);
@@ -40,6 +43,7 @@ int main() {
 
   while (continueLoop) {
     // Data Abstraction:
+    // TODO - make this its own function that returns a string
     double scoresTotal;
     double scoresAverage;
     int scoresCount;
@@ -49,10 +53,15 @@ int main() {
     string scoreFilename;
     ifstream scoreFile;
     
-    // Process:
+    // Input:
     dataFile >> first;
     dataFile >> last;
     dataFile >> middle;
+
+
+    // Process:
+    scoreFilename = last + first + ".txt";
+    scoreFile.open(scoreFilename);
 
     // Output:
 

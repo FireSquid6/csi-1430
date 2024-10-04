@@ -26,9 +26,12 @@ double getAverage(ifstream *scoreFile) {
   double returnValue;
 
   while (*scoreFile >> currentScore) {
+    cout << currentScore << endl;
     scoresCount += 1;
     scoresTotal += currentScore;
   }
+
+  cout << endl;
 
 
   // this is bad and could be more readable with an early return

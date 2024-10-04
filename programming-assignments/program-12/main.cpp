@@ -13,37 +13,6 @@
 
 using namespace std;
 
-//************************************************************
-// description: Reads the scores from a file
-// return: the average score of the files or -1 if there are no scores
-// pre: the scores file exists and is open
-// post: scoreFile is at the end of the file
-//************************************************************
-double getAverage(ifstream *scoreFile) {
-  int scoresTotal = 0;
-  int scoresCount = 0;
-  int currentScore;
-  double returnValue;
-
-  while (*scoreFile >> currentScore) {
-    cout << currentScore << endl;
-    scoresCount += 1;
-    scoresTotal += currentScore;
-  }
-
-  cout << endl;
-
-
-  // this is bad and could be more readable with an early return
-  // but if I do that the upload site complains
-  if (scoresCount == 0) {
-    returnValue = -1;
-  } else {
-    returnValue = static_cast<double>(scoresTotal) / scoresCount;
-  }
-  return returnValue;
-}
-
 int main() {
   // Data Abstraction:
   string dataFilename;
@@ -56,10 +25,14 @@ int main() {
   bool initializedMaxima = false;
   double minimum;
   double maximum;
-  double averagesTotal = 0;
   double classAverage;
-  double currentAverage = 0;
-  int studentCount = 0;
+
+  int totalScoresCount = 0;
+  double scoresTotal = 0;
+
+  double currentTotal;
+  double currentGrade;
+  int currentCount;
 
   // Input:
   cout << setprecision(2) << fixed;
@@ -106,30 +79,36 @@ int main() {
 
 
     if (scoreFile.is_open()) {
-      currentAverage = getAverage(&scoreFile);
+      currentTotal = 0;
+      currentCount = 0;
 
-      if (currentAverage == -1) {
-        outputString << "No Grades";
-      } 
-      else {
-        averagesTotal += currentAverage;
-        studentCount += 1;
+      while (scoreFile >> currentGrade) {
+        currentTotal += currentGrade;
+        currentCount += 1;
 
         if (initializedMaxima) {
-          if (currentAverage < minimum) {
-            minimum = currentAverage;
+          if (currentGrade < minimum) {
+            minimum = currentGrade;
           }
-          if (currentAverage > maximum) {
-            maximum = currentAverage;
+          if (currentGrade > maximum) {
+            maximum = currentGrade;
           }
         }
         else {
-          maximum = currentAverage;
-          minimum = currentAverage;
+          maximum = currentGrade;
+          minimum = currentGrade;
           initializedMaxima = true;
         }
+      }
 
-        outputString << currentAverage;
+      if (currentCount == 0) {
+        outputString << "No Grades";
+      } 
+      else {
+        totalScoresCount += currentCount;
+        scoresTotal += currentTotal;
+
+        outputString << currentTotal / currentCount;
       }
       scoreFile.close();
     } 
@@ -142,7 +121,7 @@ int main() {
   }
 
   // Final Processing:
-  classAverage = averagesTotal / studentCount;
+  classAverage = scoresTotal / totalScoresCount;
 
   // Final Output:
   cout << endl;

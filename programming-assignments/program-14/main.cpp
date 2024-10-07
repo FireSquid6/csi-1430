@@ -51,7 +51,6 @@ int main() {
   for (unsigned int i = 0; i < numbers.size() - 1; i++) {
     int lookingFor = numbers.at(i);
     bool foundNumber = false;
-    cout << i << endl;
     for (unsigned int j = i + 1; j < numbers.size(); j++) {
       if (numbers.at(j) == lookingFor && !foundNumber) {
         foundNumber = true;
@@ -75,8 +74,10 @@ int main() {
   }
   cout << endl << endl;
   cout << "The sum of all elements of the array is " << sum << endl;
-  cout << "The total number of duplicate elementsin the array is " << numDuplicates << endl;
-  cout << "The maximum and minimum element in the array are " << max << " , " << min << endl;
+  cout << "The total number of duplicate elementsin the array is " 
+    << numDuplicates << endl;
+  cout << "The maximum and minimum element in the array are " 
+    << max << " , " << min << endl;
 
   // Assumptions:
 

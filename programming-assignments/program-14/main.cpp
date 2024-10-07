@@ -14,7 +14,11 @@ int main() {
   // Data Abstraction:
   vector<int> numbers; 
   int numInputs;
-    int input;
+  int input;
+
+  long sum = 0;
+  int min;
+  int max;
 
   // Input:
   cout << "Input the number of elements to store in the array: ";
@@ -30,6 +34,18 @@ int main() {
   }
     
   // Process:
+  min = numbers[0];
+  max = numbers[0];
+
+  for (int i = 0; i < numInputs; i++) {
+    sum += numbers[i];
+    if (numbers[i] < min) {
+      min = numbers[i];
+    }
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
+  }
     
   // Output:
   cout << endl;
@@ -44,6 +60,8 @@ int main() {
     cout << numbers[i] << " ";
   }
   cout << endl << endl;
+  cout << "The sum of all elements of the array is " << sum << endl;
+  cout << "The maximum and minimum element in the array are " << max << " , " << min << endl;
     
   // Assumptions:
 

@@ -51,7 +51,6 @@ int main() {
 
   for (unsigned int i = 0; i < numbers.size() - 1; i++) {
     bool seenThisNumber = false;
-
     for (unsigned int j = 0; j < seen.size(); j++) {
       if (numbers.at(i) == seen.at(j)) {
         seenThisNumber = true;

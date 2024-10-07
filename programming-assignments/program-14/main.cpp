@@ -26,7 +26,7 @@ int main() {
   cin >> numInputs;
   cout << numInputs << endl;
 
-  cout << "Input " << numInputs << " integers: ";
+  cout << "Input " << numInputs << " integers: " << endl;
   for (int i = 0; i < numInputs; i++) {
     cout << "integer - " << i << " : ";
     cin >> input;

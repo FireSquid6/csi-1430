@@ -12,7 +12,7 @@
 using namespace std;
 int main() {
   // Data Abstraction:
-  vector<int> fibinacci = {0, 1};
+  vector<long> fibonacci = {0, 1};
   vector<int> requests;
   int numRequests;
   int request;
@@ -26,13 +26,14 @@ int main() {
   }
 
   // Process:
-  for (int i = 0; i < 89; i++) {
-    fibinacci.push_back(fibinacci[i] + fibinacci[i + 1]);
+  for (int i = 2; i < 91; i++) {
+    fibonacci.push_back(fibonacci[i - 1] + fibonacci[i - 2]);
   }
     
   // Output:
   for (int i = 0; i < numRequests; i++) {
-    cout << "Case " << i + 1 << ": Fib(" << requests[i] << ") = " << fibinacci[requests[i]] << endl;
+    cout << "Case " << i + 1 << ": Fib(" << requests[i] << ") = ";
+    cout << fibonacci[requests[i]] << endl;
   }
     
   // Assumptions:

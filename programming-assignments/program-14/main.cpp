@@ -13,6 +13,7 @@ using namespace std;
 int main() {
   // Data Abstraction:
   vector<int> numbers; 
+  vector<int> seen;
   int numInputs;
   int input;
 
@@ -49,19 +50,28 @@ int main() {
   }
 
   for (unsigned int i = 0; i < numbers.size() - 1; i++) {
-    int lookingFor = numbers.at(i);
-    bool foundNumber = false;
-    for (unsigned int j = i + 1; j < numbers.size(); j++) {
-      if (numbers.at(j) == lookingFor && !foundNumber) {
-        foundNumber = true;
-        numDuplicates++;
+    bool seenThisNumber = false;
+
+    for (unsigned int j = 0; j < seen.size(); j++) {
+      if (numbers.at(i) == seen.at(j)) {
+        seenThisNumber = true;
       }
     }
 
+    if (!seenThisNumber) {
+      seen.push_back(numbers.at(i));
+      bool flag = false;
+      for (unsigned int j = i + 1; j < numbers.size(); j++) {
+        if (numbers.at(i) == numbers.at(j) && !flag) {
+          numDuplicates += 1;
+          flag = true;
+        }
+      }
+    }
   }
     
   // Output:
-  cout << endl;
+  cout << endl << endl;
   cout << "The values stored into the array are : " << endl;
   for (unsigned int i = 0; i < numbers.size(); i++) {
     cout << numbers[i] << " ";

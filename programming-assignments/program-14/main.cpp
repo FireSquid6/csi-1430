@@ -24,7 +24,7 @@ int main() {
   // Input:
   cout << "Input the number of elements to store in the array: ";
   cin >> numInputs;
-  cout << numInputs << endl << endl;
+  cout << numInputs << endl;
 
   cout << "Input " << numInputs << " integers: ";
   for (int i = 0; i < numInputs; i++) {

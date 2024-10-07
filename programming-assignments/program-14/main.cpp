@@ -17,6 +17,7 @@ int main() {
   int input;
 
   long sum = 0;
+  int numDuplicates = 0;
   int min;
   int max;
 
@@ -46,23 +47,37 @@ int main() {
       max = numbers[i];
     }
   }
+
+  for (unsigned int i = 0; i < numbers.size() - 1; i++) {
+    int lookingFor = numbers.at(i);
+    bool foundNumber = false;
+    cout << i << endl;
+    for (unsigned int j = i + 1; j < numbers.size(); j++) {
+      if (numbers.at(j) == lookingFor && !foundNumber) {
+        foundNumber = true;
+        numDuplicates++;
+      }
+    }
+
+  }
     
   // Output:
   cout << endl;
   cout << "The values stored into the array are : " << endl;
-  for (int i = 0; i < numInputs; i++) {
+  for (unsigned int i = 0; i < numbers.size(); i++) {
     cout << numbers[i] << " ";
   }
   cout << endl << endl;
 
   cout << "The values stored into the array in reverse are : " << endl;
-  for (int i = numInputs - 1; i >= 0; i--) {
+  for (int i = numbers.size() - 1; i >= 0; i--) {
     cout << numbers[i] << " ";
   }
   cout << endl << endl;
   cout << "The sum of all elements of the array is " << sum << endl;
+  cout << "The total number of duplicate elementsin the array is " << numDuplicates << endl;
   cout << "The maximum and minimum element in the array are " << max << " , " << min << endl;
-    
+
   // Assumptions:
 
   return 0;

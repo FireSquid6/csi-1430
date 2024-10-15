@@ -21,7 +21,8 @@ int main() {
     cin >> sizeInput;
     if (sizeInput != 0) {
       sizes.push_back(sizeInput);
-    } else {
+    } 
+    else {
       flag = false;
     }
   }
@@ -60,7 +61,7 @@ int main() {
     // Output:
     for (int i = 0; i < size; i++) {
       for (int j = 0; j < size; j++) {
-        cout << matrix[i][j] << " ";
+        cout << matrix[i][j] << "  ";
       }
       cout << endl;
     }

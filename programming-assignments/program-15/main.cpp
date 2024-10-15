@@ -28,7 +28,7 @@ int main() {
   }
 
   // Loop
-  for (int k = 0; k < sizes.size(); k++) {
+  for (unsigned int k = 0; k < sizes.size(); k++) {
     // Data Abstraction:
     int size = sizes[k];
     int matrix[size][size];

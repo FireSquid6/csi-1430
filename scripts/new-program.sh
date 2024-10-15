@@ -50,5 +50,3 @@ int main() {
 
   return 0;
 }" > "$DIRECTORY/main.cpp"
-
-echo "" > "$DIRECTORY/expected-output.txt"

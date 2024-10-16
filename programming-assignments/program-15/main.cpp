@@ -11,11 +11,16 @@
 
 using namespace std;
 
+// description: converts an integer to a string with spaces
+// return: string
+// pre: num is an integer
+// post: returns a string with the integer and spaces
 string numToString(int num) {
   string str = to_string(num);
   if (str.length() == 1) {
     str += "  ";
-  } else {
+  } 
+  else {
     str += " ";
   }
   return str;

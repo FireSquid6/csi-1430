@@ -17,6 +17,35 @@ void printDivider(int sections) {
   cout << endl;
 }
 
+string centerNumberRight(int num) {
+  string str = to_string(num);
+  str = "  " + str;
+  while (str.length() < 6) {
+    str += " ";
+  }
+
+  return str;
+}
+
+string centerNumberLeft(int num) {
+  string str = to_string(num);
+  str += "  ";
+
+  while (str.length() < 6) {
+    str = " " + str;
+  }
+
+  return str;
+}
+
+string padNumberRight(int num, unsigned int len) {
+  string str = to_string(num);
+  while (str.length() < len) {
+    str += " ";
+  }
+  return str;
+}
+
 int main() {
   // Data Abstraction:
   int r1;
@@ -49,19 +78,19 @@ int main() {
   }
     
   // Output:
-  cout << "        ";
+  cout << "     ";
   for (int i = c1; i <= c2; i++) {
-    cout << i << "     ";
+    cout << centerNumberLeft(i);
   }
   cout << endl;
   printDivider(sections);
 
 
   for (int i = 0; i < width; i++) {
-    cout << r1 + i << "       ";
+    cout << padNumberRight(r1 + i, 6);
 
     for (int j = 0; j < height; j++) {
-      cout << matrix[i][j] << "     ";
+      cout << centerNumberRight(matrix[i][j]);
     }
     cout << endl;
     printDivider(sections);

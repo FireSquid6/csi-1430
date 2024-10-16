@@ -10,6 +10,17 @@
 #include <vector>
 
 using namespace std;
+
+string numToString(int num) {
+  string str = to_string(num);
+  if (str.length() == 1) {
+    str += "  ";
+  } else {
+    str += " ";
+  }
+  return str;
+}
+
 int main() {
   // Data Abstraction:
   vector<int> sizes;
@@ -61,7 +72,7 @@ int main() {
     // Output:
     for (int i = 0; i < size; i++) {
       for (int j = 0; j < size; j++) {
-        cout << matrix[i][j] << "  ";
+        cout << numToString(matrix[i][j]);
       }
       cout << endl;
     }

@@ -91,20 +91,12 @@ int main() {
 
   // Process:
   top = makeNumberList(c1, c2);
-  for (unsigned int i = 0; i < top.size(); i++) {
-    cout << top.at(i) << " ";
-  }
-  cout << endl;
-
   side = makeNumberList(r1, r2);
-  for (unsigned int i = 0; i < side.size(); i++) {
-    cout << side.at(i) << " ";
-  }
-  cout << endl;
 
-  sections = top.size() + 1;
   width = top.size();
   height = side.size();
+
+  sections = top.size() + 1;
 
   // Matrix Declaration
   int matrix[width][height];
@@ -129,7 +121,7 @@ int main() {
   for (unsigned int i = 0; i < side.size(); i++) {
     cout << padNumberRight(side.at(i), 6);
 
-    for (int j = 0; j < top.size(); j++) {
+    for (unsigned int j = 0; j < top.size(); j++) {
       cout << centerNumberRight(matrix[j][i]);
     }
     cout << endl;

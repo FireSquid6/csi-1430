@@ -7,6 +7,7 @@
  * Date Last Modified: 10/15/2024
  */
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -46,6 +47,24 @@ string padNumberRight(int num, unsigned int len) {
   return str;
 }
 
+vector<int> makeNumberList(int start, int end) {
+  vector<int> list;
+
+
+  if (start < end) {
+    for (int i = start; i <= end; i++) {
+      list.push_back(i);
+    }
+  } 
+  else {
+    for (int i = start; i >= end; i--) {
+      list.push_back(i);
+    }
+  }
+
+  return list;
+}
+
 int main() {
   // Data Abstraction:
   int r1;
@@ -56,6 +75,9 @@ int main() {
   int width;
   int height;
   int sections;
+
+  vector<int> top;
+  vector<int> side;
     
   // Input:
   cin >> r1;

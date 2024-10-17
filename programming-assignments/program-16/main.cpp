@@ -111,7 +111,7 @@ int main() {
   printDivider(sections);
 
 
-  for (int i = 0; i < side.size(); i++) {
+  for (unsigned int i = 0; i < side.size(); i++) {
     cout << padNumberRight(side.at(i), 6);
 
     for (int j = 0; j < height; j++) {

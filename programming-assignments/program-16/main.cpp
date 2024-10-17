@@ -50,7 +50,6 @@ string padNumberRight(int num, unsigned int len) {
 vector<int> makeNumberList(int start, int end) {
   vector<int> list;
 
-
   if (start < end) {
     for (int i = start; i <= end; i++) {
       list.push_back(i);
@@ -80,25 +79,41 @@ int main() {
   vector<int> side;
     
   // Input:
+  cout << "Please Enter Four Integers R1 R2 C1 C2: ";
   cin >> r1;
   cin >> r2;
   cin >> c1;
   cin >> c2;
+  cout << r1 << " "
+    << r2 << " "
+    << c1 << " "
+    << c2 << endl;
 
   // Process:
-  sections = c2 - c1 + 2;
-  width = r2 - r1 + 1;
-  height = c2 - c1 + 1;
-
   top = makeNumberList(c1, c2);
-  side = makeNumberList(r1, r2);
+  for (unsigned int i = 0; i < top.size(); i++) {
+    cout << top.at(i) << " ";
+  }
+  cout << endl;
 
+  side = makeNumberList(r1, r2);
+  for (unsigned int i = 0; i < side.size(); i++) {
+    cout << side.at(i) << " ";
+  }
+  cout << endl;
+
+  sections = top.size() + 1;
+  width = top.size();
+  height = side.size();
+
+  // Matrix Declaration
   int matrix[width][height];
 
 
+  // Matrix Filling
   for (int i = 0; i < width; i++) {
     for (int j = 0; j < height; j++) {
-      matrix[i][j] = top[j] * side[i];
+      matrix[i][j] = top.at(i) * side.at(j);
     }
   }
     
@@ -114,8 +129,8 @@ int main() {
   for (unsigned int i = 0; i < side.size(); i++) {
     cout << padNumberRight(side.at(i), 6);
 
-    for (int j = 0; j < height; j++) {
-      cout << centerNumberRight(matrix[i][j]);
+    for (int j = 0; j < top.size(); j++) {
+      cout << centerNumberRight(matrix[j][i]);
     }
     cout << endl;
     printDivider(sections);

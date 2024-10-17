@@ -86,7 +86,6 @@ int main() {
   cin >> c2;
 
   // Process:
-  // TODO - make a vector of the top and the side since c1 > or < c2 and you still have to go in order
   sections = c2 - c1 + 2;
   width = r2 - r1 + 1;
   height = c2 - c1 + 1;

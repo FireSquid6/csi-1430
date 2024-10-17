@@ -91,26 +91,29 @@ int main() {
   width = r2 - r1 + 1;
   height = c2 - c1 + 1;
 
+  top = makeNumberList(c1, c2);
+  side = makeNumberList(r1, r2);
+
   int matrix[width][height];
 
 
   for (int i = 0; i < width; i++) {
     for (int j = 0; j < height; j++) {
-      matrix[i][j] = (r1 + i) * (c1 + j);
+      matrix[i][j] = top[j] * side[i];
     }
   }
     
   // Output:
   cout << "     ";
-  for (int i = c1; i <= c2; i++) {
-    cout << centerNumberLeft(i);
+  for (unsigned int i = 0; i < top.size(); i++) {
+    cout << centerNumberLeft(top.at(i));
   }
   cout << endl;
   printDivider(sections);
 
 
-  for (int i = 0; i < width; i++) {
-    cout << padNumberRight(r1 + i, 6);
+  for (int i = 0; i < side.size(); i++) {
+    cout << padNumberRight(side.at(i), 6);
 
     for (int j = 0; j < height; j++) {
       cout << centerNumberRight(matrix[i][j]);

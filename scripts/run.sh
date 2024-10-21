@@ -22,7 +22,7 @@ fi
 
 
 echo "COMPILING..."
-g++ ./main.cpp -o program.o
+g++ ./*.cpp -o program.o
 echo ""
 echo "RUNNING THE PROGRAM:"
 ./program.o

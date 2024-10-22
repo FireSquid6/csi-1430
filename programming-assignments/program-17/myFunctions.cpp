@@ -41,7 +41,8 @@ int max(int list[], int size) {
     if (!setMax) {
       maximum = list[i];
       setMax = true;
-    } else if (list[i] > maximum) {
+    } 
+    else if (list[i] > maximum) {
       maximum = list[i];
     }
   }
@@ -62,7 +63,8 @@ double max(double list[], int size) {
     if (!setMax) {
       maximum = list[i];
       setMax = true;
-    } else if (list[i] > maximum) {
+    } 
+    else if (list[i] > maximum) {
       maximum = list[i];
     }
   }
@@ -100,7 +102,8 @@ int min(int list[], int size) {
     if (!setMin) {
       minimum = list[i];
       setMin = true;
-    } else if (list[i] < minimum) {
+    } 
+    else if (list[i] < minimum) {
       minimum = list[i];
     }
   }
@@ -116,7 +119,8 @@ double min(double list[], int size) {
     if (!setMin) {
       minimum = list[i];
       setMin = true;
-    } else if (list[i] < minimum) {
+    } 
+    else if (list[i] < minimum) {
       minimum = list[i];
     }
   }
@@ -149,7 +153,8 @@ int factorial(int n) {
 }
 
 double combination(int n, int r) {
-  return factorial(n) / static_cast<double>((factorial(r) * factorial(n - r)));
+  double denominator = static_cast<double>((factorial(r) * factorial(n - r)));
+  return factorial(n) / denominator;
 }
 
 double permutation(int n, int r) { 

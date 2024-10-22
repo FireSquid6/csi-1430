@@ -8,18 +8,9 @@
  */
 #include "myFunctions.h"
 
-// Note - these functions could be implemented using a
-// type generic like so to avoid duplication:
-// template <typename T> T max(T a, T b) {
-//   T maximum = a;
-//   if (b > a) {
-//     maximum = b;
-//   }
-//
-//   return maximum;
-// }
-//
-// I don't think you want us to do that yet though
+// Note - these functions could be implemented using a type
+// generic template to avoid duplication but I don't think
+// you want us to do that yet.
 
 int max(int a, int b) {
   int maximum = a;

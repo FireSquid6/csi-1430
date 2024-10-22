@@ -23,7 +23,7 @@ int absoluteValue(int);
 double absoluteValue(double);
 
 
-int factorial(int);
+int answer(int);
 
 double combination(int, int);
 

@@ -210,11 +210,14 @@ double absoluteValue(double a) {
 // post: the value of the int is unchagned
 //************************************************************
 int factorial(int n) {
-  if (n == 0) {
-    return 1;
+  int answer = 1;
+
+  while (n > 0) {
+    answer *= n;
+    n--;
   }
 
-  return n * factorial(n - 1);
+  return answer;
 }
 
 //************************************************************

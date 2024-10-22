@@ -182,11 +182,12 @@ double min(double list[], int size) {
 // post: integer value is unchanged
 //************************************************************
 int absoluteValue(int a) {
+  int abs = a;
   if (a < 0) {
-    return -a;
+    abs = -a;
   }
 
-  return a;
+  return abs;
 }
 
 //************************************************************
@@ -196,11 +197,12 @@ int absoluteValue(int a) {
 // post: double value is unchanged
 //************************************************************
 double absoluteValue(double a) {
+  int abs = a;
   if (a < 0) {
-    return -a;
+    abs = -a;
   }
 
-  return a;
+  return abs;
 }
 
 //************************************************************

@@ -6,7 +6,6 @@
  * Date Created: 10/21/2024
  * Date Last Modified: 10/21/2024
  */
-// TODO - finish documentation
 
 int Strlen(const char s1[]) {
   int i = 0;
@@ -27,7 +26,6 @@ void Strcpy(char s1[], const char s2[]) {
   }
 }
 
-// TODO - refactor this to not use an early return
 int Strcmp(const char s1[], const char s2[]) {
   int i = 0;
   while (s1[i] != '\0' && s2[i] != '\0') {
@@ -36,6 +34,7 @@ int Strcmp(const char s1[], const char s2[]) {
     }
     i++;
   }
+
   return s1[i] - s2[i];
 }
 

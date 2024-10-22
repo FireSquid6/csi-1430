@@ -7,18 +7,16 @@
  * Date Last Modified:
  */
 #include <iostream>
+#include "cstring.h"
 
 using namespace std;
 int main() {
-  // Data Abstraction:
-    
-  // Input:
-    
-  // Process:
-    
-  // Output:
-    
-  // Assumptions:
+  const char s1[] = "hello!";
+  
+  cout << s1 << " -- " << Strlen(s1) << endl;
+  
 
   return 0;
 }
+
+

@@ -18,10 +18,17 @@ int Strlen(const char s1[]) {
   return i;
 }
 
-void Strcpy(char s1[], const char s2[]) {
+void Strcpy(char dest[], const char src[]) {
   int i = 0;
-  while (s2[i] != '\0') {
-    s1[i] = s2[i];
+  bool flag = true;
+
+  while (flag) {
+    dest[i] = src[i];
+
+    if (src[i] == '\0') {
+      flag = false;
+    }
+
     i++;
   }
 }

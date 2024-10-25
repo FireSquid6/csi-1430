@@ -12,7 +12,7 @@
 #include <iomanip>
 
 
-const int WIDTH = 20;
+const int WIDTH = 50;
 
 using namespace std;
 int main() {
@@ -46,6 +46,13 @@ int main() {
     getline(stream, title, ',');
     getline(stream, location, ',');
     getline(stream, category, ',');
+
+    titles.push_back(title);
+    locations.push_back(location);
+    categories.push_back(category);
+
+    stream.clear();
+    stream.str("");
   }
 
   // Process:
@@ -53,6 +60,10 @@ int main() {
   // Output:
   cout << left;
   cout << setw(WIDTH) << h1 << setw(WIDTH) << h2 << setw(WIDTH) << h3 << endl;
+
+  for (int i = 0; i < titles.size(); i++) {
+    cout << setw(WIDTH) << titles[i] << setw(WIDTH) << locations[i] << setw(WIDTH) << categories[i] << endl;
+  } 
     
   // Assumptions:
 

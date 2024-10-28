@@ -38,7 +38,7 @@ int main() {
     row.at(0) = 1;
     row.at(row.size() - 1) = 1;
 
-    for (int j = 1; j < row.size() - 1; j++) {
+    for (unsigned int j = 1; j < row.size() - 1; j++) {
       int left = triangle.at(i - 2).at(j - 1);
       int right = triangle.at(i - 2).at(j);
       row.at(j) = left + right;
@@ -50,12 +50,12 @@ int main() {
 
     
   // Output:
-  for (int i = 0; i < triangle.size(); i++) {
+  for (unsigned int i = 0; i < triangle.size(); i++) {
     for (int j = 0; j < numSpaces; j++) {
       cout << " ";
     }
 
-    for (int j = 0; j < triangle.at(i).size(); j++) {
+    for (unsigned int j = 0; j < triangle.at(i).size(); j++) {
       cout << left << setw(WIDTH) << triangle.at(i).at(j);
     }
     numSpaces -= 4;

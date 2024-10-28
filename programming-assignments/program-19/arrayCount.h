@@ -97,7 +97,7 @@ int matrixCount(int m[][MAX_SIZE], int r, int c, int v);
 // pre: matrix exists and is of row r and column c
 // post: return value is the number of v in m
 //************************************************************
-int matrixCount(char m[][MAX_SIZE], int r, int c, int v);
+int matrixCount(char m[][MAX_SIZE], int r, int c, char v);
 
 //************************************************************
 // description: Counts the number of `v` in `m` of size `r` by `c`

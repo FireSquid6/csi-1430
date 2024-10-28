@@ -100,3 +100,44 @@ int arrayCount(vector<char> a, char v) {
 
   return count;
 }
+
+
+int matrixCount(int m[][MAX_SIZE], int r, int c, int v) {
+  int count = 0;
+  for (int i = 0; i < c; i++) {
+    for (int j = 0; j < r; j++) {
+      if (m[i][j] == v) {
+        count += 1;
+      }
+    }
+  }
+
+  return count;
+}
+
+
+int matrixCount(char m[][MAX_SIZE], int r, int c, char v) {
+  int count = 0;
+  for (int i = 0; i < c; i++) {
+    for (int j = 0; j < r; j++) {
+      if (m[i][j] == v) {
+        count += 1;
+      }
+    }
+  }
+
+  return count;
+}
+
+int matrixCount(string m[][MAX_SIZE], int r, int c, string v) {
+  int count = 0;
+  for (int i = 0; i < c; i++) {
+    for (int j = 0; j < r; j++) {
+      if (m[i][j] == v) {
+        count += 1;
+      }
+    }
+  }
+
+  return count;
+}

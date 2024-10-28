@@ -13,7 +13,7 @@
 using namespace std;
 int main() {
   // Data Abstraction:
-  const int WIDTH = 7;
+  const int WIDTH = 8;
   vector<vector<int>> triangle;
   int numRows = 0;
   int numSpaces;
@@ -46,7 +46,7 @@ int main() {
     triangle.push_back(row);
   }
 
-  numSpaces = ((numRows * WIDTH) + 2) / 2;
+  numSpaces = ((numRows * WIDTH - 1) + 3) / 2;
 
     
   // Output:
@@ -58,7 +58,7 @@ int main() {
     for (int j = 0; j < triangle.at(i).size(); j++) {
       cout << left << setw(WIDTH) << triangle.at(i).at(j);
     }
-    numSpaces -= 5;
+    numSpaces -= 4;
     cout << endl;
   }
     

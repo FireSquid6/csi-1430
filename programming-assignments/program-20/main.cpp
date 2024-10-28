@@ -16,6 +16,7 @@ int main() {
   const int WIDTH = 7;
   vector<vector<int>> triangle;
   int numRows = 0;
+  int numSpaces;
 
   // Input:
   cout << "Please Enter The Number of Rows: ";
@@ -45,13 +46,19 @@ int main() {
     triangle.push_back(row);
   }
 
+  numSpaces = ((numRows * WIDTH) + 2) / 2;
+
     
   // Output:
   for (int i = 0; i < triangle.size(); i++) {
+    for (int j = 0; j < numSpaces; j++) {
+      cout << " ";
+    }
+
     for (int j = 0; j < triangle.at(i).size(); j++) {
       cout << left << setw(WIDTH) << triangle.at(i).at(j);
     }
-
+    numSpaces -= 5;
     cout << endl;
   }
     

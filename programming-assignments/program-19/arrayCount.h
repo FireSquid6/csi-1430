@@ -26,6 +26,15 @@ const int MAX_SIZE = 25;
 //************************************************************
 int arrayCount(int arr[], int s, int v);
 
+
+//************************************************************
+// description: Counts the number of `v` in `arr` of length `s`
+// return: int
+// pre: arr exists and is of size s
+// post: return value is the number of v in arr
+//************************************************************
+int arrayCount(string arr[], int s, string v);
+
 //************************************************************
 // description: Counts the number of `v` in `arr` of length `s`
 // return: int

@@ -1,13 +1,14 @@
 /*
  * Author: Jonathan Deiss
  * Assignment Title: Array Processing
- * Assignment Description: This program will process arrays using different stuff
+ * Assignment Description: Array processing functions
  * Due Date: 10/30/2024
  * Date Created: 10/28/2024
  * Date Last Modified: 10/28/2024
  */
 
 #include <vector>
+#include <cstring>
 #include "arrayCount.h"
 
 
@@ -33,7 +34,7 @@ int arrayCount(double a[], int s, double v) {
   return count;
 }
 
-int arrayCount(char a[], int s, char v) {
+int arrayCount(string a[], int s, string v) {
   int count = 0;
   for (int i = 0; i < s; i++) {
     if (a[i] == v) {
@@ -45,7 +46,8 @@ int arrayCount(char a[], int s, char v) {
 }
 
 
-int arrayCount(string a[], int s, string v) {
+int arrayCount(char a[], char v) {
+  int s = strlen(a);
   int count = 0;
   for (int i = 0; i < s; i++) {
     if (a[i] == v) {

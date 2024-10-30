@@ -50,7 +50,7 @@ int main() {
 
     
   // Output:
-  for (unsigned int i = 0; i < triangle.size(); i++) {
+  for (int i = 0; i < numRows; i++) {
     for (int j = 0; j < numSpaces; j++) {
       cout << " ";
     }

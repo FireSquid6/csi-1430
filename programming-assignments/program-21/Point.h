@@ -20,7 +20,7 @@ struct Point {
 
   //************************************************************
   // description: Creates a new point at (x, y)
-  // return: Point
+  // return: none
   // pre: two integers exist
   // post: A new point is constructed
   //************************************************************
@@ -28,7 +28,7 @@ struct Point {
 
   //************************************************************
   // description: Creates a new point at (0, 0)
-  // return: Point
+  // return: none
   // pre: none
   // post: A new point is constructed
   //************************************************************

@@ -19,12 +19,20 @@ struct Point {
   int x, y;
 
   //************************************************************
-  // description: Creates a new point
+  // description: Creates a new point at (x, y)
   // return: Point
   // pre: two integers exist
   // post: A new point is constructed
   //************************************************************
-  Point(int = 0, int = 0);
+  Point(int x, int y);
+
+  //************************************************************
+  // description: Creates a new point at (0, 0)
+  // return: Point
+  // pre: none
+  // post: A new point is constructed
+  //************************************************************
+  Point();
 
   //************************************************************
   // description: Displays a point to any stream

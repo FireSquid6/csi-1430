@@ -11,6 +11,10 @@
 #include "Point.h"
 
 
+Point::Point(int x, int y) {
+
+}
+
 Point Point::midPoint(const Point& p) const {
   int newX = (x + p.x) / 2;
   int newY = (y + p.y) / 2;

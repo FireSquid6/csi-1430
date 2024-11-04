@@ -16,11 +16,6 @@ Point::Point(int newX, int newY) {
   y = newY;
 }
 
-Point::Point() {
-  x = 0;
-  y = 0;
-}
-
 Point Point::midPoint(const Point& p) const {
   int newX = (x + p.x) / 2;
   int newY = (y + p.y) / 2;
@@ -39,5 +34,5 @@ double Point::distance(const Point& p) const {
 
 
 void Point::display(ostream& stream) const {
-  stream << "(" << x << ", " << y << ")" << endl;
+  stream << "(" << x << "," << y << ")";
 }

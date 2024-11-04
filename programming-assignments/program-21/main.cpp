@@ -7,18 +7,21 @@
  * Date Last Modified: 11/04/2024
  */
 #include <iostream>
+#include "Point.h"
 
 using namespace std;
 int main() {
-  // Data Abstraction:
-    
-  // Input:
-    
-  // Process:
-    
-  // Output:
-    
-  // Assumptions:
+  Point p1(0, 0);
+  Point p2(-5, 62);
+
+
+  Point midPoint = p1.midPoint(p2);
+
+  p1.display(cout);
+  cout << endl;
+  p2.display(cout);
+  cout << endl;
+  midPoint.display(cout);
 
   return 0;
 }

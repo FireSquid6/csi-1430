@@ -11,14 +11,23 @@
 #include "Point.h"
 
 
+int ceilDivide(int a, int b) {
+  if (a % 2 != 0) {
+    a += 1 * (a / abs(a));
+  }
+
+  return a / b;
+}
+
+
 Point::Point(int newX, int newY) {
   x = newX;
   y = newY;
 }
 
 Point Point::midPoint(const Point& p) const {
-  int newX = (x + p.x) / 2;
-  int newY = (y + p.y) / 2;
+  int newX = ceilDivide(p.x + x, 2);
+  int newY = ceilDivide(p.y + y, 2);
 
   return Point(newX, newY);
 }

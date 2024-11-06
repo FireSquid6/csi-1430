@@ -22,7 +22,7 @@ public:
   // description: Creates a new sphere
   // return: Sphere
   // pre: none
-  // post: a sphere with radius 0 and color "green" is created
+  // post: a sphere with radius 1 and color "green" is created
   //************************************************************
   Sphere();
   //************************************************************

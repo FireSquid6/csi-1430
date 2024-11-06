@@ -1,5 +1,13 @@
-#include "Sphere.h"
+/*
+ * Author: Jonathan Deiss
+ * Assignment Title: Sphere Class
+ * Assignment Description: Implement a sphere class
+ * Due Date: 11/08/2024
+ * Date Created: 11/06/2024
+ * Date Last Modified: 11/06/2024
+ */
 
+#include "Sphere.h"
 
 const double PI = 3.14159;
 

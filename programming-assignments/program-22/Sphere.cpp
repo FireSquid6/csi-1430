@@ -13,7 +13,7 @@ const double PI = 3.14159;
 
 
 Sphere::Sphere() {
-  radius = 0;
+  radius = 1.0;
   color = "green";
 }
 

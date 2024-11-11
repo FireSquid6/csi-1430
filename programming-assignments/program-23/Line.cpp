@@ -44,3 +44,24 @@ double Line::slope() const {
 bool Line::hasSlope() const {
   return p2.x - p1.x == 0;
 }
+
+
+bool Line::isParallel(const Line& other) const {
+  return slope() == other.slope();
+}
+
+bool Line::isPerpendicular(const Line& other) const {
+  bool perpendicular = false;
+
+  if (slope() == 0 || other.slope() == 0) {
+    // xor operator - if the two slopes are 0 then
+    // one of them has to be a vertical slope
+    if (hasSlope() ^ other.hasSlope()) {
+      perpendicular = true;
+    }
+  }
+
+
+
+  return perpendicular;
+}

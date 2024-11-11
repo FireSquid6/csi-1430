@@ -1,0 +1,46 @@
+/*
+ * Author: Jonathan Deiss
+ * Assignment Title: Line Class
+ * Assignment Description: A class that makes a line
+ * Due Date: 11/13/2024
+ * Date Created: 11/11/2024
+ * Date Last Modified: 11/11/2024
+ */
+
+#include "Line.h"
+
+
+Line::Line(Point np1, Point np2) {
+  p1 = np1;
+  p2 = np2;
+}
+
+void Line::setFirstPoint(const Point& p) {
+  p1 = p;
+}
+
+
+void Line::setSecondPoint(const Point& p) {
+  p1 = p;
+}
+
+double Line::slope() const {
+  double rise = static_cast<double>(p2.y - p1.y);
+  double run = static_cast<double>(p2.x - p1.x);
+  double slope;
+
+  if (run == 0) {
+    // avoid a divide by 0 error
+    slope = 0;
+  } else {
+    slope = rise / run;
+  }
+
+
+  return slope;
+
+}
+
+bool Line::hasSlope() const {
+  return p2.x - p1.x == 0;
+}

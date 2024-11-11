@@ -18,9 +18,18 @@ void Line::setFirstPoint(const Point &p) { p1 = p; }
 
 void Line::setSecondPoint(const Point &p) { p1 = p; }
 
+
+Point Line::getFirstPoint() const {
+  return p1;
+}
+
+Point Line::getSecondPoint() const {
+  return p2;
+}
+
 double Line::slope() const {
-  double rise = static_cast<double>(p2.y - p1.y);
-  double run = static_cast<double>(p2.x - p1.x);
+  double rise = p2.y - p1.y;
+  double run = p2.x - p1.x;
   double slope;
 
   if (run == 0) {
@@ -53,4 +62,36 @@ bool Line::isPerpendicular(const Line &other) const {
   }
 
   return perpendicular;
+}
+
+
+bool Line::isCollinear(const Line &other) const {
+  bool collinear = true;
+
+  if (slope() != other.slope()) {
+    collinear = false;
+  }
+
+  if (yIntercept() != other.yIntercept()) {
+    collinear = false;
+  }
+
+  return collinear;
+}
+
+double Line::yIntercept() const {
+  return p1.y - slope() * p1.x;
+}
+
+Point Line::intersect(const Line & other) const {
+  double x = (yIntercept() - other.yIntercept()) 
+    / (slope() - other.slope());
+  
+  double y = slope() * x + yIntercept();
+
+  return Point(x, y);
+}
+
+void Line::display(ostream & o) const {
+  o << "y = " << slope() << "x + " << yIntercept();
 }

@@ -16,22 +16,29 @@ using namespace std;
 struct Point {
   double x, y;
 
-  Point(const Point &p) { *this = p; }
+  // description: Creates a new point
+  // return: none
+  // pre: a point exists
+  // post: a point is created
+  Point(const Point &p);
 
-  Point(double x = 0, double y = 0) {
-    this->x = x;
-    this->y = y;
-  }
+  // description: Creates a new point
+  // return: none
+  // pre: none
+  // post: creates a new point at the specified position
+  Point(double x = 0, double y = 0);
 
-  Point &operator=(const Point &p) {
-    x = p.x;
-    y = p.y;
-    return *this;
-  }
+  // description: assigns a point
+  // return: Point
+  // pre: another point exists
+  // post: the second point is unmodified
+  Point &operator=(const Point &p);
 
-  double distance(Point p) const {
-    return sqrt(pow(x - p.x, 2) + pow(y - p.y, 2));
-  }
+  // description: gets the distance between two points
+  // return: double
+  // pre: two points exist
+  // post: the distance is calculated
+  double distance(Point p) const;
 };
 
 #endif

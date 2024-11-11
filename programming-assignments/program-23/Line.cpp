@@ -9,20 +9,14 @@
 
 #include "Line.h"
 
-
 Line::Line(Point np1, Point np2) {
   p1 = np1;
   p2 = np2;
 }
 
-void Line::setFirstPoint(const Point& p) {
-  p1 = p;
-}
+void Line::setFirstPoint(const Point &p) { p1 = p; }
 
-
-void Line::setSecondPoint(const Point& p) {
-  p1 = p;
-}
+void Line::setSecondPoint(const Point &p) { p1 = p; }
 
 double Line::slope() const {
   double rise = static_cast<double>(p2.y - p1.y);
@@ -36,21 +30,16 @@ double Line::slope() const {
     slope = rise / run;
   }
 
-
   return slope;
-
 }
 
-bool Line::hasSlope() const {
-  return p2.x - p1.x == 0;
-}
+bool Line::hasSlope() const { return p2.x - p1.x == 0; }
 
-
-bool Line::isParallel(const Line& other) const {
+bool Line::isParallel(const Line &other) const {
   return slope() == other.slope();
 }
 
-bool Line::isPerpendicular(const Line& other) const {
+bool Line::isPerpendicular(const Line &other) const {
   bool perpendicular = false;
 
   if (slope() == 0 || other.slope() == 0) {
@@ -59,9 +48,9 @@ bool Line::isPerpendicular(const Line& other) const {
     if (hasSlope() ^ other.hasSlope()) {
       perpendicular = true;
     }
+  } else {
+    perpendicular = -(1 / slope()) == other.slope();
   }
-
-
 
   return perpendicular;
 }

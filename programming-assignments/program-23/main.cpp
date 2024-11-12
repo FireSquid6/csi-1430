@@ -12,28 +12,31 @@
 
 using namespace std;
 int main() {
-  // Data Abstraction:
-  Line line = Line(Point(1, 1), Point(2, 2));
+  Line l1 = Line(Point(0, 345), Point(1, 331));
+  Line l2 = Line(Point(0, 5), Point(1, 6));
 
-  line.getFirstPoint().display(cout);
-  line.getSecondPoint().display(cout);
+  l1.display(cout);
   cout << endl;
-  cout << line.slope() << endl;
+  l2.display(cout);
+  cout << endl;
 
-  if (line.hasSlope()) {
-    cout << "has slope" << endl;
-  } else {
-    cout << "no slope" << endl;
-  }
-  line.display(cout);
+  Point interseciton = l1.intersect(l2);
+  interseciton.display(cout);
+  cout << endl;
+  cout << endl;
 
-  // Input:
-    
-  // Process:
-    
-  // Output:
-    
-  // Assumptions:
+
+  Line l3 = Line(Point(0, 0), Point(1, 1));
+  Line l4 = Line(Point(5, 0), Point(5, 1));
+
+  l3.display(cout);
+  cout << endl;
+  l4.display(cout);
+  cout << endl;
+  Point other = l3.intersect(l4);
+  other.display(cout);
+  cout << endl;
+  cout << endl;
 
   return 0;
 }

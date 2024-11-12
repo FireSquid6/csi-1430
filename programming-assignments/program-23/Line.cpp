@@ -92,8 +92,20 @@ double Line::yIntercept() const {
 }
 
 Point Line::intersect(const Line & other) const {
-  double x = (yIntercept() - other.yIntercept()) 
+  double x; 
+
+  if (hasSlope() && other.hasSlope()) {
+    x = -(yIntercept() - other.yIntercept()) 
     / (slope() - other.slope());
+  }
+  else {
+    if (!other.hasSlope()) {
+      x = other.getFirstPoint().x;
+    }
+    else {
+      x = p1.x;
+    }
+  }
   
   double y = slope() * x + yIntercept();
 
@@ -121,8 +133,17 @@ void Line::display(ostream & o) const {
     if (m == 1) {
       o << "y = x + " << b; 
     }
+    else if (m == -1) {
+      o << "y = -x + " << b;
+    }
     else {
-      o << "y = " << m << "x + " << b;
+      o << "y = " << m << "x " ;
+
+      if (b > 0) {
+        o << "+ ";
+      }
+
+      o << b;
     }
   }
 }

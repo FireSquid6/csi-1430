@@ -28,5 +28,6 @@ double Point::distance(Point p) const {
 }
 
 void Point::display(ostream& o) const {
+  o << fixed << setprecision(0);
   o << "(" << x << "," << y << ")";
 }

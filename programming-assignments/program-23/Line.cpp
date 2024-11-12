@@ -10,13 +10,20 @@
 #include "Line.h"
 
 Line::Line(Point np1, Point np2) {
+  cout << endl;
   p1 = np1;
   p2 = np2;
 }
 
-void Line::setFirstPoint(const Point &p) { p1 = p; }
+void Line::setFirstPoint(const Point &p) { 
+  p1.x = p.x;
+  p1.y = p.y;
+}
 
-void Line::setSecondPoint(const Point &p) { p1 = p; }
+void Line::setSecondPoint(const Point &p) { 
+  p2.x = p.x;
+  p2.y = p.y;
+}
 
 
 Point Line::getFirstPoint() const {
@@ -43,7 +50,7 @@ double Line::slope() const {
   return slope;
 }
 
-bool Line::hasSlope() const { return p2.x - p1.x == 0; }
+bool Line::hasSlope() const { return p2.x - p1.x != 0; }
 
 bool Line::isParallel(const Line &other) const {
   return slope() == other.slope();
@@ -98,7 +105,7 @@ void Line::display(ostream & o) const {
   double m = slope();
   double b = yIntercept();
   if (!hasSlope()) {
-    o << "x = " << b;
+    o << "x = " << p1.x;
   }
   else if (m == 0) {
     o << "y = " << b;
@@ -119,4 +126,8 @@ void Line::display(ostream & o) const {
       o << "y = " << m << "x + " << b;
     }
   }
+
+  o << " | ";
+  p1.display(o);
+  p2.display(o);
 }

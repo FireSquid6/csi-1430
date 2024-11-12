@@ -10,7 +10,6 @@
 #include "Line.h"
 
 Line::Line(Point np1, Point np2) {
-  cout << endl;
   p1 = np1;
   p2 = np2;
 }
@@ -126,8 +125,4 @@ void Line::display(ostream & o) const {
       o << "y = " << m << "x + " << b;
     }
   }
-
-  o << " | ";
-  p1.display(o);
-  p2.display(o);
 }

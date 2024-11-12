@@ -35,7 +35,8 @@ double Line::slope() const {
   if (run == 0) {
     // avoid a divide by 0 error
     slope = 0;
-  } else {
+  } 
+  else {
     slope = rise / run;
   }
 
@@ -57,7 +58,8 @@ bool Line::isPerpendicular(const Line &other) const {
     if (hasSlope() ^ other.hasSlope()) {
       perpendicular = true;
     }
-  } else {
+  } 
+  else {
     perpendicular = -(1 / slope()) == other.slope();
   }
 
@@ -93,5 +95,28 @@ Point Line::intersect(const Line & other) const {
 }
 
 void Line::display(ostream & o) const {
-  o << "y = " << slope() << "x + " << yIntercept();
+  double m = slope();
+  double b = yIntercept();
+  if (!hasSlope()) {
+    o << "x = " << b;
+  }
+  else if (m == 0) {
+    o << "y = " << b;
+  }
+  else if (b == 0) {
+    if (m == 1) {
+      o << "y = x";
+    }
+    else {
+      o << "y = " << m << "x";
+    }
+  }
+  else {
+    if (m == 1) {
+      o << "y = x + " << b; 
+    }
+    else {
+      o << "y = " << m << "x + " << b;
+    }
+  }
 }

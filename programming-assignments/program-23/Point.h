@@ -10,6 +10,7 @@
 #define POINT_H_
 
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 
@@ -39,6 +40,13 @@ struct Point {
   // pre: two points exist
   // post: the distance is calculated
   double distance(Point p) const;
+
+
+  // description: displays the point
+  // return: void
+  // pre: none
+  // post: none
+  void display(ostream&) const;
 };
 
 #endif

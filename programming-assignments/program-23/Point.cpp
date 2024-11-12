@@ -26,3 +26,7 @@ Point &Point::operator=(const Point &p) {
 double Point::distance(Point p) const {
   return sqrt(pow(x - p.x, 2) + pow(y - p.y, 2));
 }
+
+void Point::display(ostream& o) const {
+  o << "(" << x << "," << y << ")";
+}

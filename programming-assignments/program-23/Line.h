@@ -12,6 +12,7 @@
 #include "Point.h"
 #include <iostream>
 #include <ostream>
+#include <iomanip>
 
 using namespace std;
 

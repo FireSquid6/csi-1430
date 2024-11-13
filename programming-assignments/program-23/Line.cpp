@@ -58,11 +58,15 @@ bool Line::isParallel(const Line &other) const {
 bool Line::isPerpendicular(const Line &other) const {
   bool perpendicular = false;
 
-  if (slope() == 0 || other.slope() == 0) {
-    // xor operator - if the two slopes are 0 then
-    // one of them has to be a vertical slope
-    if (hasSlope() ^ other.hasSlope()) {
-      perpendicular = true;
+  if (!hasSlope() || !other.hasSlope()) {
+    // only one can not have a slope
+    if (!hasSlope() ^ other.hasSlope()) {
+      if (!hasSlope()) {
+        perpendicular = other.slope() == 0;
+      }
+      else {
+        perpendicular = slope() == 0;
+      }
     }
   } 
   else {
@@ -124,6 +128,9 @@ void Line::display(ostream & o) const {
   else if (b == 0) {
     if (m == 1) {
       o << "y = x";
+    }
+    else if (m == -1) {
+      o << "y = -x";
     }
     else {
       o << "y = " << m << "x";

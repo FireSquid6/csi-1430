@@ -36,6 +36,24 @@ int main() {
   Point other = l3.intersect(l4);
   other.display(cout);
   cout << endl;
+
+  bool perpendicular = l3.isPerpendicular(l4);
+
+  if (perpendicular) {
+    cout << "l3 and l4 are perpendicular" << endl;
+  } else {
+    cout << "l3 and l4 are not perpendicular" << endl;
+  }
+
+
+  cout << endl;
+
+  Line l5 = Line(Point(-1, 1), Point(0, 0));
+  l5.display(cout);
+  cout << endl;
+
+  Point p1 = Point(-0, 1);
+  p1.display(cout);
   cout << endl;
 
   return 0;

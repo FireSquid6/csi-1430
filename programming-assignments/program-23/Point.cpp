@@ -28,6 +28,16 @@ double Point::distance(Point p) const {
 }
 
 void Point::display(ostream& o) const {
-  o << fixed << setprecision(0);
-  o << "(" << x << "," << y << ")";
+  double displayX = round(x);
+  double displayY = round(y);
+  
+  if (fabs(displayX) < 1) {
+    displayX = 0;
+  }
+
+  if (fabs(displayX) < 1) {
+    displayY = 0;
+  }
+
+  o << "(" << displayX << "," << displayY << ")";
 }

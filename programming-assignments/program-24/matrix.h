@@ -11,6 +11,7 @@
 
 #include <ostream>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -21,6 +22,8 @@ class matrix_t{
 private:
 	int row, col;
 	double data[MAX_SIZE][MAX_SIZE] = {{0}};
+
+
 
 public:
   // description: creates a new matrix
@@ -115,6 +118,18 @@ public:
   // post: a pointer to the double is created
 	double*  operator[](int n);
 
+
+  // description: gets a minor matrix
+  // return: matrix
+  // pre: none
+  // post: a new matrix is created
+  matrix_t getMinor(int cutRow, int cutCol) const;
+
+  // description: gets the cofactor of a matrix
+  // return: double
+  // pre: a matrix exists
+  // post: none
+  double getCofactor(int cutRow, int cutCol) const;
 };
 
 

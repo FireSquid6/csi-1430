@@ -9,7 +9,6 @@
 
 
 #include "matrix.h"
-#include <iostream>
 
 matrix_t::matrix_t() {
   row = 1;
@@ -107,11 +106,11 @@ matrix_t matrix_t::multiply(const matrix_t& other) const {
   int n = col;
   int rows = row;
   int cols = other.col;
-  matrix_t matrix = matrix_t(row, other.col);
+  matrix_t matrix = matrix_t(rows, cols);
 
   for (int r = 0; r < rows; r++) {
     for (int c = 0; c < cols; c++) {
-      int sum = 0;
+      double sum = 0;
 
       for (int i = 0; i < n; i++) {
         sum += getValue(r, i) * other.getValue(i, c);
@@ -173,14 +172,8 @@ matrix_t matrix_t::operator*(const matrix_t& other) const {
   return multiply(other);
 }
 
-double* matrix_t::operator[](int r) {
-  int c = 0;
-
-  while (getValue(r, c) != 0) {
-    c += 1;
-  }
-
-  return &data[r][c];
+double* matrix_t::operator[](int n) {
+  return data[n];
 }
 
 

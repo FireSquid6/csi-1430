@@ -16,10 +16,10 @@
 using namespace std;
 int main() {
   // Data Abstraction:
-  int numSpheres;
-  int numRed;
+  int numSpheres = 0;
+  int numRed = 0;
+  int numHighVolume = 0;
   double percentRed;
-  int numHighVolume;
   double totalArea;
   double averageArea;
   vector<Sphere> spheres;
@@ -77,6 +77,7 @@ int main() {
   }
 
   percentRed = static_cast<double>(numRed) / numSpheres;
+  percentRed *= 100;
   averageArea = totalArea / numSpheres;
 
   // Output:

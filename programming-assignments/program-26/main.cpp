@@ -7,12 +7,25 @@
  * Date Last Modified: 11/20/2024
  */
 #include <iostream>
+#include <string>
+#include <sstream>
+#include "Line.h"
 
 using namespace std;
+
+
+
 int main() {
   // Data Abstraction:
+  string line;
+  stringstream ss;
+  Line l1;
+  Line l2;
     
   // Input:
+  for (int i = 0; i < 2; i++) {
+    getline(cin, line);
+  }
     
   // Process:
     

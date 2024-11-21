@@ -36,7 +36,6 @@ Line parseEquation(string text) {
   double slope = 0;
   double intercept = 0;
   
-  bool seenIntercept = false;
   bool seenY = false;
   bool nextNegative = false;
 
@@ -69,7 +68,6 @@ Line parseEquation(string text) {
       if (nextNegative) {
         slope = -slope;
       }
-      seenIntercept = false;
     }
   }
 

@@ -2,7 +2,7 @@
  * Author: Jonathan Deiss
  * Assignment Title: System of Linear Equations
  * Assignment Description: Solves two linear equations
- * Due Date: 11/22/2204
+ * Due Date: 11/22/2024
  * Date Created: 11/20/2024
  * Date Last Modified: 11/20/2024
  */
@@ -32,10 +32,6 @@ bool isNumeric(string s) {
 
 
 Line parseEquation(string text) {
-  // assumes that the string is valid. This means the following forms (n = any number, * = '+' or '-'):
-  // y = nx + n
-  // y = nx
-  // x = n
   Line l;
   double slope = 0;
   double intercept = 0;
@@ -49,10 +45,8 @@ Line parseEquation(string text) {
   ss << text;
 
   while (ss >> token) {
-    cout << "PARSING: " << token << endl;
     if (token.at(token.length() - 1) == 'x') {
       token.pop_back();
-      cout << "  found slope: " << token << endl;
 
       if (token.length() > 0) {
         slope = stod(token);
@@ -71,7 +65,6 @@ Line parseEquation(string text) {
       nextNegative = true;
     }
     else if (isNumeric(token)) {
-      cout << "  found intercept: " << token << endl;
       intercept = stod(token);
       if (nextNegative) {
         slope = -slope;
@@ -99,6 +92,9 @@ int main() {
   string cinLine;
   Line l1;
   Line l2;
+  bool isSolution;
+  Point intersection;
+
     
   // Input:
   getline(cin, cinLine);
@@ -108,10 +104,18 @@ int main() {
   l2 = parseEquation(cinLine);
     
   // Process:
+  intersection = l1.intersect(l2);
+  isSolution = !(l1.isParallel(l2) || l1.isCollinear(l2));
     
   // Output:
-    
-  // Assumptions:
+  if (isSolution) {
+    cout << "SOLUTION: ";
+    intersection.display(cout);
+    cout << endl;
+  }
+  else {
+    cout << "NO SOLUTION" << endl;
+  }
 
   return 0;
 }

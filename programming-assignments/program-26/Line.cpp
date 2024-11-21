@@ -1,10 +1,10 @@
 /*
  * Author: Jonathan Deiss
- * Assignment Title: Line Class
- * Assignment Description: A class that makes a line
- * Due Date: 11/13/2024
- * Date Created: 11/11/2024
- * Date Last Modified: 11/11/2024
+ * Assignment Title: System of Linear Equations
+ * Assignment Description: Solves two linear equations
+ * Due Date: 11/22/2024
+ * Date Created: 11/20/2024
+ * Date Last Modified: 11/20/2024
  */
 
 #include "Line.h"

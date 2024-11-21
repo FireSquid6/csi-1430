@@ -1,0 +1,25 @@
+y = 2x + 7
+y = -2x + 3
+SOLUTION: (-1,5)
+CORRECT :)
+
+y = 2x + 7
+y = -2x - 3
+NO SOLUTION
+SHOULD BE: SOLUTION: (-3,2)
+
+y = 2x 
+y = -2x 
+SOLUTION: (0,0)
+CORRECT :)
+
+y = 2x - 11
+x = 9
+SOLUTION: (9,-7)
+SHOULD BE: SOLUTION: (9,7)
+
+y = 2x - 11
+y = 2x - 11
+NO SOLUTION
+CORRECT :)
+

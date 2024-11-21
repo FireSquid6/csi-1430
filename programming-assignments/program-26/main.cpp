@@ -96,9 +96,10 @@ int main() {
     
   // Input:
   getline(cin, cinLine);
+  cout << cinLine << endl;
   l1 = parseEquation(cinLine);
-
   getline(cin, cinLine);
+  cout << cinLine << endl;
   l2 = parseEquation(cinLine);
     
   // Process:

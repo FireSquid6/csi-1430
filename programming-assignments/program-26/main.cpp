@@ -37,7 +37,7 @@ Line parseEquation(string text) {
   double intercept = 0;
   
   bool seenY = false;
-  bool nextNegative = false;
+  int interceptSign = 1;
 
   stringstream ss;
   string token;  
@@ -49,29 +49,24 @@ Line parseEquation(string text) {
 
       if (token.length() > 0) {
         slope = stod(token);
-        if (nextNegative) {
-          slope = -slope;
-        }
       }
 
-      nextNegative = false;
+    }
+    else if (token == "-") {
+      interceptSign = -1;
+    }
+    else if (token == "+") {
+      interceptSign = 1;
     }
     else if (token.at(token.length() - 1) == 'y') {
       seenY = true;
-      nextNegative = false;
-    }
-    else if (token == "-") {
-      nextNegative = true;
     }
     else if (isNumeric(token)) {
       intercept = stod(token);
-      if (nextNegative) {
-        slope = -slope;
-      }
     }
   }
 
-  // y = nx + n or y = nx
+  intercept = intercept * interceptSign;
   if (seenY) {
     l.setFirstPoint(Point(0, intercept));
     l.setSecondPoint(Point(1, intercept + slope));
@@ -87,33 +82,52 @@ Line parseEquation(string text) {
 
 int main() {
   // Data Abstraction:
-  string cinLine;
+  string firstLine;
+  string secondLine;
   Line l1;
   Line l2;
-  bool isSolution;
+  bool isSolution = true;
   Point intersection;
 
     
   // Input:
-  getline(cin, cinLine);
-  cout << cinLine << endl;
-  l1 = parseEquation(cinLine);
-  getline(cin, cinLine);
-  cout << cinLine << endl;
-  l2 = parseEquation(cinLine);
+  getline(cin, firstLine);
+  l1 = parseEquation(firstLine);
+  getline(cin, secondLine);
+  l2 = parseEquation(secondLine);
     
   // Process:
+
+
   intersection = l1.intersect(l2);
-  isSolution = !(l1.isParallel(l2) || l1.isCollinear(l2));
+  if (l1.isCollinear(l2)) {
+    isSolution = false;
+  }
+
+  if (l1.isParallel(l2)) {
+    isSolution = false;
+  }
+  if (intersection.y < 0) {
+    // debug output
+    cout << "INPUT: " << endl;
+    cout << firstLine << endl;
+    cout << secondLine << endl;
+
+    cout << "PARSED:" << endl;
+    l1.display(cout);
+    cout << endl;
+    l2.display(cout);
+    cout << endl;
+  }
     
   // Output:
   if (isSolution) {
-    cout << "SOLUTION: ";
+    cout << "S: ";
     intersection.display(cout);
     cout << endl;
   }
   else {
-    cout << "NO SOLUTION" << endl;
+    cout << "NS" << endl;
   }
 
   return 0;

@@ -50,21 +50,21 @@ Line parseEquation(string text) {
       }
 
     } 
-    else if (token == "-") {
-      interceptSign = -1;
-    } 
-    else if (token == "+") {
-      interceptSign = 1;
-    } 
     else if (token.at(token.length() - 1) == 'y') {
       seenY = true;
     } 
     else if (isNumeric(token)) {
       intercept = stod(token);
     }
+    else if (token == "-") {
+      interceptSign = -1;
+    } 
+    else if (token == "+") {
+      interceptSign = 1;
+    } 
   }
 
-  intercept = intercept * interceptSign;
+  intercept *= interceptSign;
   if (seenY) {
     l.setFirstPoint(Point(0, intercept));
     l.setSecondPoint(Point(1, intercept + slope));

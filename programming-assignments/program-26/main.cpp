@@ -20,9 +20,9 @@ bool isNumeric(string s) {
   for (unsigned int i = 0; i < s.length(); i++) {
     char c = s.at(i);
 
-    if (!(c == '1') || (c == '2') || (c == '3') || (c == '4') || (c == '5') ||
+    if (!((c == '1') || (c == '2') || (c == '3') || (c == '4') || (c == '5') ||
         (c == '6') || (c == '7') || (c == '8') || (c == '9') || (c == '0') ||
-        (c == '-') || (c == '+')) {
+        (c == '-') || (c == '+'))) {
       flag = false;
     }
   }
@@ -50,15 +50,19 @@ Line parseEquation(string text) {
         slope = stod(token);
       }
 
-    } else if (token.back() == 'y') {
+    } 
+    else if (token.back() == 'y') {
       verticalLine = false;
-    } else if (isNumeric(token)) {
-      intercept = stod(token);
-    } else if (token == "-") {
+    } 
+    else if (token == "-") {
       interceptSign = -1;
-    } else if (token == "+") {
+    } 
+    else if (token == "+") {
       interceptSign = 1;
     }
+    else if (isNumeric(token)) {
+      intercept = stod(token);
+    } 
   }
 
   intercept *= interceptSign;

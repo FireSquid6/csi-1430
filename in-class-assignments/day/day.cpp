@@ -48,7 +48,7 @@ void Day::setYear(int y) {
 }
 
 
-ostream& operator<<(ostream& os, Day& day) {
+ostream& operator<<(ostream& os, const Day& day) {
     os << right << setfill('0');
     os << setw(2) << day.getMonth() 
         << setw(1) << "-" << setw(2) << day.getDay() 

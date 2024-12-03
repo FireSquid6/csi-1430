@@ -56,8 +56,10 @@ int main() {
   string subheader;
   string filename;
   vector<Transaction> transactions;
+  ofstream file1;
+  ofstream file2;
+  ofstream file3;
 
-    
   // Input:
   while (!inFile.is_open()) {
     cout << "Enter Name of Data File: ";
@@ -77,11 +79,12 @@ int main() {
 
   while (getline(inFile, line)) {
     stringstream ss;
-    ss << line;
     int number;
     double amount;
     char type;
     string code;
+
+    ss << line;
 
     ss >> number;
     ss >> amount;
@@ -92,13 +95,18 @@ int main() {
   }
 
   // Output:
-  ofstream file1;
-  ofstream file2;
-  ofstream file3;
-
   file1.open("Company_A.txt");
   file2.open("Company_B.txt");
   file3.open("Company_C.txt");
+
+  file1 << header << endl;
+  file1 << subheader << endl;
+
+  file2 << header << endl;
+  file2 << subheader << endl;
+
+  file3 << header << endl;
+  file3 << subheader << endl;
 
   for (unsigned int i = 0; i < transactions.size(); i++) {
     Transaction transaction = transactions.at(i);
